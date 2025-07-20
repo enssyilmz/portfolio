@@ -14,14 +14,14 @@ Responsive tasarımı ile hem masaüstü hem de mobil cihazlarda mükemmel gör�
 
 ## Kurulum
 
-1. Depoyu klonlayın:  
+-Depoyu klonlayın:  
    git clone https://github.com/kullaniciadi/meyblog.git
-2.Proje dizinine gidin:
-cd meyblog
-3.Bağımlılıkları yükleyin:
-npm install
-4.Projeyi başlatın:
-npm run dev
+-Proje dizinine gidin:
+   cd meyblog
+-Bağımlılıkları yükleyin:
+   npm install
+-Projeyi başlatın:
+   npm run dev
 
 ## Kullanım
 Ana sayfa, sidebar ve navbar ile gezinin.
@@ -30,7 +30,7 @@ Giriş yapmak için /login sayfasını kullanın.
 
 Admin paneline giriş yaptıktan sonra içeriklerinizi yönetin.
 
-##Teknolojiler
+## Teknolojiler
 
 Vue.js 3
 
