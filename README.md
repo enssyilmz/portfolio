@@ -1,5 +1,3 @@
-# MeyBlog
-
 ## Proje Hakkında
 
 MeyBlog, Vue.js ve Firebase kullanarak oluşturduğum kişisel blog platformudur.  
