@@ -16,13 +16,13 @@ Responsive tasarımı ile hem masaüstü hem de mobil cihazlarda mükemmel gör�
 
 ## Kurulum
 
-## 1. Depoyu klonlayın:  
+1. Depoyu klonlayın:  
    git clone https://github.com/kullaniciadi/meyblog.git
-## 2.Proje dizinine gidin:
+2.Proje dizinine gidin:
 cd meyblog
-## 3.Bağımlılıkları yükleyin:
+3.Bağımlılıkları yükleyin:
 npm install
-## 4.Projeyi başlatın:
+4.Projeyi başlatın:
 npm run dev
 
 ## Kullanım
