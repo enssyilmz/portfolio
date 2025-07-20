@@ -1,35 +1,50 @@
-# meyblog
+# MeyBlog
 
-This template should help get you started developing with Vue 3 in Vite.
+## Proje Hakkında
 
-## Recommended IDE Setup
+MeyBlog, Vue.js ve Firebase kullanarak oluşturduğum kişisel blog platformudur.  
+Kullanıcı dostu arayüzü ve admin paneli sayesinde içerik yönetimi kolaydır.  
+Responsive tasarımı ile hem masaüstü hem de mobil cihazlarda mükemmel görünür.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Özellikler
 
-## Customize configuration
+- Sidebar ve Navbar ile kolay gezinme  
+- Admin paneli ile içerik ekleme, düzenleme ve silme  
+- Firebase ile kullanıcı kimlik doğrulama  
+- Tailwind CSS ile hızlı ve modern tasarım  
+- Vue.js ile hızlı ve dinamik frontend
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## Kurulum
 
-## Project Setup
-
-```sh
+## 1. Depoyu klonlayın:  
+   git clone https://github.com/kullaniciadi/meyblog.git
+## 2.Proje dizinine gidin:
+cd meyblog
+## 3.Bağımlılıkları yükleyin:
 npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
+## 4.Projeyi başlatın:
 npm run dev
-```
 
-### Compile and Minify for Production
+## Kullanım
+Ana sayfa, sidebar ve navbar ile gezinin.
 
-```sh
-npm run build
-```
+Giriş yapmak için /login sayfasını kullanın.
 
-### Lint with [ESLint](https://eslint.org/)
+Admin paneline giriş yaptıktan sonra içeriklerinizi yönetin.
 
-```sh
-npm run lint
-```
+##Teknolojiler
+
+Vue.js 3
+
+Firebase
+
+Tailwind CSS 4
+
+Vite
+
+## Lisans
+Bu proje MIT Lisansı ile lisanslanmıştır. Daha fazla bilgi için LICENSE dosyasına bakınız.
+
+## İletişim
+Muhammed Enes Yılmaz
+enssyilmzx@gmail.com
