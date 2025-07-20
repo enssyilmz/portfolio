@@ -6,23 +6,15 @@ Responsive tasarımı ile hem masaüstü hem de mobil cihazlarda mükemmel gör�
 
 ## Özellikler
 
-<<<<<<< HEAD
 - Sidebar ve Navbar ile kolay gezinme
 - Admin paneli ile içerik ekleme, düzenleme ve silme
 - Firebase ile kullanıcı kimlik doğrulama
 - Tailwind CSS ile hızlı ve modern tasarım
-=======
-- Sidebar ve Navbar ile kolay gezinme  
-- Admin paneli ile içerik ekleme, düzenleme ve silme  
-- Firebase ile kullanıcı kimlik doğrulama  
-- Tailwind CSS ile hızlı ve modern tasarım  
->>>>>>> 3b4ba1977a42a9a11bd36b82076a0e0b0d107ec4
 - Vue.js ile hızlı ve dinamik frontend
 
 ## Kurulum
 
 -Depoyu klonlayın:  
-<<<<<<< HEAD
  git clone https://github.com/kullaniciadi/meyblog.git
 
 -Proje dizinine gidin:
@@ -58,39 +50,5 @@ Bu proje MIT Lisansı ile lisanslanmıştır. Daha fazla bilgi için LICENSE dos
 
 ## İletişim
 
-=======
-   git clone https://github.com/kullaniciadi/meyblog.git
-   
--Proje dizinine gidin:
-   cd meyblog
-   
--Bağımlılıkları yükleyin:
-   npm install
-   
--Projeyi başlatın:
-   npm run dev
-
-## Kullanım
-Ana sayfa, sidebar ve navbar ile gezinin.
-
-Giriş yapmak için /login sayfasını kullanın.
-
-Admin paneline giriş yaptıktan sonra içeriklerinizi yönetin.
-
-## Teknolojiler
-
-Vue.js 3
-
-Firebase
-
-Tailwind CSS 4
-
-Vite
-
-## Lisans
-Bu proje MIT Lisansı ile lisanslanmıştır. Daha fazla bilgi için LICENSE dosyasına bakınız.
-
-## İletişim
->>>>>>> 3b4ba1977a42a9a11bd36b82076a0e0b0d107ec4
 Muhammed Enes Yılmaz
 enssyilmzx@gmail.com
