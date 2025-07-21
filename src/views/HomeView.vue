@@ -24,7 +24,7 @@
         </p>
         <div class="flex gap-4 mt-6">
           <a
-            href="https://github.com/enssyilmzx"
+            href="https://github.com/enssyilmz"
             target="_blank"
             class="text-gray-600 hover:text-black transition-colors duration-300 text-5xl"
           >
@@ -38,7 +38,7 @@
             <font-awesome-icon :icon="['fab', 'linkedin']" />
           </a>
           <a
-            href="https://twitter.com/enssjps"
+            href="https://twitter.com/enssjpg"
             target="_blank"
             class="text-gray-600 hover:text-black transition-colors duration-300 text-5xl"
           >
