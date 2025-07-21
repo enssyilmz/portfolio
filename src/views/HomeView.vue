@@ -1,5 +1,5 @@
 <template>
-  <div class="scroll-smooth">
+  <div>
     <AppNavbar />
     <Sidebar />
 
@@ -148,8 +148,3 @@
 import Sidebar from '../components/AppSidebar.vue'
 import AppNavbar from '@/components/AppNavbar.vue'
 </script>
-<style scoped>
-html {
-  scroll-behavior: smooth;
-}
-</style>

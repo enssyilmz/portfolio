@@ -36,18 +36,17 @@
       :class="[open ? 'block' : 'hidden']"
       class="absolute top-full left-0 w-full bg-yellow-sea-600 shadow-md transition-all duration-300"
     >
-      <a
+      <button
         v-for="item in sections"
         :key="item.id"
-        :href="'#' + item.id"
-        @click="open = false"
+        @click="handleMenuClick(item.id)"
         :class="[
-          'block px-3 py-2 font-bold transition-colors duration-300',
+          'block px-3 py-2 font-bold transition-colors duration-300 w-full text-left',
           activeSection === item.id ? 'text-white' : 'text-yellow-200 hover:text-white',
         ]"
       >
         {{ item.name }}
-      </a>
+      </button>
     </div>
   </nav>
 </template>
@@ -64,6 +63,21 @@ const sections = [
   { id: 'yetenekler', name: 'YETENEKLERİM' },
   { id: 'iletisim', name: 'İLETİŞİM' },
 ]
+
+function handleMenuClick(id) {
+  const el = document.getElementById(id)
+  if (!el) return
+
+  // Smooth scroll için alternatif yöntem
+  setTimeout(() => {
+    el.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'nearest',
+    })
+  }, 100)
+  open.value = false
+}
 
 onMounted(() => {
   const observer = new IntersectionObserver(
