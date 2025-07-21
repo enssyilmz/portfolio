@@ -13,3 +13,27 @@
   --color-yellow-sea-900: #752c12;
   --color-yellow-sea-950: #431505;
 }
+@layer base {
+  body {
+    @apply bg-yellow-sea-50 text-gray-800;
+  }
+  span {
+    @apply text-yellow-sea-600;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold text-yellow-sea-600;
+  }
+
+  a {
+    @apply text-yellow-sea-500 hover:text-yellow-sea-600;
+  }
+
+  .btn {
+    @apply bg-yellow-sea-500 text-white hover:bg-yellow-sea-600;
+  }
+}

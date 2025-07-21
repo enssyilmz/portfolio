@@ -7,11 +7,11 @@
       <section id="hakkimda" class="min-h-screen flex flex-col justify-center items-start gap-4">
         <h1 class="text-5xl font-bold">
           <span class="text-gray-700">MUHAMMED ENES </span>
-          <span class="text-yellow-sea-600">YILMAZ</span>
+          <span>YILMAZ</span>
         </h1>
         <h1 class="text-xl">
           <span class="text-gray-700">ORDU/KUMRU -</span>
-          <span class="text-yellow-sea-600"> enssyilmzx@gmail.com</span>
+          <span> enssyilmzx@gmail.com</span>
         </h1>
         <br />
         <p class="text-lg text-gray-600">
@@ -26,7 +26,7 @@
           <a
             href="https://github.com/enssyilmzx"
             target="_blank"
-            class="text-gray-600 hover:text-yellow-500 transition-colors duration-300 text-5xl"
+            class="text-gray-600 hover:text-black transition-colors duration-300 text-5xl"
           >
             <font-awesome-icon :icon="['fab', 'github']" />
           </a>
@@ -71,38 +71,73 @@
       <hr class="my-12 border-t-2 border-gray-300" />
 
       <section id="deneyimler" class="min-h-screen flex flex-col justify-center items-start gap-4">
-        <h1 class="text-5xl font-bold text-gray-800">Deneyimler</h1>
-        <p class="text-lg text-gray-600">Bu alana iş/staj deneyimlerin yazılacak.</p>
+        <h1 class="text-5xl font-bold text-gray-800">DENEYİMLERİM</h1>
+        <br />
+        <div class="flex flex-col gap-2">
+          <div class="flex justify-between items-center">
+            <h1 class="text-xl font-semibold text-gray-800">Softtech Yazılım Teknolojileri A.Ş.</h1>
+            <span class="text-sm">Haziran 2025 - Temmuz 2025</span>
+          </div>
+          <h2 class="text-xl font-semibold text-gray-500">Full Stack Developer Stajyer</h2>
+          <p class="text-lg text-gray-600">
+            Kurumun veri senkronizasyon ihtiyacına yönelik olarak, Node.js ve TypeScript ile
+            geliştirdiğim mikroservis mimarili backend uygulamada, dakikada bir dış servisten veri
+            çeken zamanlayıcı sistem kurarak Kafka ile mesajlaşma üzerinden gelen verileri MSSQL
+            veritabanına ve bellek içi cache'e entegre ettim.
+          </p>
+        </div>
+        <br />
+        <div class="flex flex-col gap-2">
+          <div class="flex justify-between items-center">
+            <h1 class="text-xl font-semibold text-gray-800">Beyoğlu Belediyesi</h1>
+            <span class="text-sm">Ağustos 2024 - Eylül 2024</span>
+          </div>
+          <h2 class="text-xl font-semibold text-gray-500">Full Stack Developer Stajyer</h2>
+          <p class="text-lg text-gray-600">
+            ASP.NET MVC mimarisi ile geliştirdiğim stajyer yönetim sistemi sayesinde, kullanıcılar
+            sistem üzerinden stajyer kayıt, görüntüleme, güncelleme ve silme işlemlerini kolaylıkla
+            gerçekleştirebilmektedir.
+          </p>
+        </div>
       </section>
 
       <hr class="my-12 border-t-2 border-gray-300" />
 
       <section id="egitim" class="min-h-screen flex flex-col justify-center items-start gap-4">
-        <h1 class="text-5xl font-bold text-gray-800">Eğitim Hayatım</h1>
-        <p class="text-lg text-gray-600">Eğitim geçmişin burada olacak.</p>
+        <h1 class="text-5xl font-bold text-gray-800">EĞİTİM HAYATIM</h1>
+        <br />
+        <div class="w-full">
+          <div class="flex items-center justify-between w-full">
+            <h1 class="text-xl font-semibold text-gray-800">
+              Zonguldak Bülent Ecevit Üniversitesi
+            </h1>
+            <span class="text-sm"> Eylül 2022 - Temmuz 2025</span>
+          </div>
+          <h2 class="text-xl font-semibold text-gray-500 mt-1">Bilgisayar Mühendisliği</h2>
+          <p class="text-xl text-gray-600">Lisans Derecesi</p>
+        </div>
+        <br />
+        <div class="w-full">
+          <div class="flex items-center justify-between w-full">
+            <h1 class="text-xl font-semibold text-gray-800">Karadeniz Teknik Üniversitesi</h1>
+            <span class="text-sm"> Ağustos 2019 - Temmuz 2021</span>
+          </div>
+          <h2 class="text-xl font-semibold text-gray-500 mt-1">Bilgisayar Programcılığı</h2>
+          <p class="text-xl text-gray-600">Ön Lisans Derecesi</p>
+        </div>
       </section>
 
       <hr class="my-12 border-t-2 border-gray-300" />
 
       <section id="yetenekler" class="min-h-screen flex flex-col justify-center items-start gap-4">
-        <h1 class="text-5xl font-bold text-gray-800">Yeteneklerim</h1>
+        <h1 class="text-5xl font-bold text-gray-800">YETENEKLERİM</h1>
         <p class="text-lg text-gray-600">Yeteneklerini buraya yazabilirsin.</p>
       </section>
 
       <hr class="my-12 border-t-2 border-gray-300" />
 
-      <section
-        id="sertifikalar"
-        class="min-h-screen flex flex-col justify-center items-start gap-4"
-      >
-        <h1 class="text-5xl font-bold text-gray-800">Sertifikalarım</h1>
-        <p class="text-lg text-gray-600">Sertifikalarını buraya ekle.</p>
-      </section>
-
-      <hr class="my-12 border-t-2 border-gray-300" />
-
       <section id="iletisim" class="min-h-screen flex flex-col justify-center items-start gap-4">
-        <h1 class="text-5xl font-bold text-gray-800">İletişim</h1>
+        <h1 class="text-5xl font-bold text-gray-800">İLETİŞİM</h1>
         <p class="text-lg text-gray-600">İletişim bilgilerini buraya koyabilirsin.</p>
       </section>
     </main>
