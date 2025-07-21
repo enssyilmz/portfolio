@@ -2,32 +2,58 @@
   <aside
     class="hidden lg:block fixed top-0 left-0 h-full w-64 bg-yellow-sea-600 text-white shadow-lg z-10"
   >
-    <nav class="mt-6 flex flex-col gap-3 px-4 text-center">
-      <a href="#hakkimda" class="block px-4 py-2 text-yellow-200 hover:text-white font-bold">
-        HAKKIMDA
-      </a>
-      <a href="#deneyimler" class="block px-4 py-2 text-yellow-200 hover:text-white font-bold">
-        DENEYİMLER
-      </a>
-      <a href="#egitim" class="block px-4 py-2 text-yellow-200 hover:text-white font-bold">
-        EĞİTİM HAYATIM
-      </a>
-      <a href="#yetenekler" class="block px-4 py-2 text-yellow-200 hover:text-white font-bold">
-        YETENEKLERİM
-      </a>
-      <a href="#sertifikalar" class="block px-4 py-2 text-yellow-200 hover:text-white font-bold">
-        SERTİFİKALARIM
-      </a>
-      <a href="#iletisim" class="block px-4 py-2 text-yellow-200 hover:text-white font-bold">
-        İLETİŞİM
+    <nav class="h-full flex justify-center flex-col gap-3 px-4 items-center text-center">
+      <img
+        src="/src/assets/vesikalik.jpg"
+        alt="Vesikalik Fotograf"
+        class="rounded-full border-8 border-yellow-sea-400 shadow-md object-cover w-48 h-48 mb-4"
+      />
+      <a
+        v-for="item in sections"
+        :key="item.id"
+        :href="'#' + item.id"
+        :class="[
+          'block font-bold transition-colors duration-300',
+          activeSection === item.id ? 'text-white' : 'text-yellow-200 hover:text-white',
+        ]"
+      >
+        {{ item.name }}
       </a>
     </nav>
   </aside>
 </template>
 
-<style scoped>
-/* Opsiyonel: Scroll kapanmasın diye */
-body {
-  overflow-x: hidden;
-}
-</style>
+<script setup>
+import { ref, onMounted, onUnmounted } from 'vue'
+
+const activeSection = ref('')
+const sections = [
+  { id: 'hakkimda', name: 'HAKKIMDA' },
+  { id: 'deneyimler', name: 'DENEYİMLER' },
+  { id: 'egitim', name: 'EĞİTİM HAYATIM' },
+  { id: 'yetenekler', name: 'YETENEKLERİM' },
+  { id: 'iletisim', name: 'İLETİŞİM' },
+]
+
+onMounted(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          activeSection.value = entry.target.id
+        }
+      })
+    },
+    {
+      threshold: 0.5, // %50 görünüyorsa aktif say
+    },
+  )
+
+  const targets = document.querySelectorAll('section[id]')
+  targets.forEach((el) => observer.observe(el))
+
+  onUnmounted(() => {
+    targets.forEach((el) => observer.unobserve(el))
+  })
+})
+</script>

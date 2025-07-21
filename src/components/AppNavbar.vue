@@ -2,7 +2,7 @@
   <nav
     class="fixed top-0 left-0 right-0 bg-yellow-sea-600 text-white px-4 py-3 flex items-center justify-between z-50 shadow-md lg:hidden"
   >
-    <!-- Menü Butonu (Mobilde görünür) -->
+    <!-- Menü Butonu -->
     <button @click="open = !open" class="focus:outline-none">
       <svg
         v-if="!open"
@@ -31,36 +31,59 @@
       </svg>
     </button>
 
-    <!-- Menü (Mobil açıkken görünür) -->
+    <!-- Menü Öğeleri -->
     <div
       :class="[open ? 'block' : 'hidden']"
-      class="absolute top-full left-0 w-full bg-yellow-sea-600 shadow-md"
+      class="absolute top-full left-0 w-full bg-yellow-sea-600 shadow-md transition-all duration-300"
     >
-      <a href="#hakkimda" class="block px-3 py-2 text-yellow-200 hover:text-white font-bold"
-        >HAKKIMDA</a
+      <a
+        v-for="item in sections"
+        :key="item.id"
+        :href="'#' + item.id"
+        @click="open = false"
+        :class="[
+          'block px-3 py-2 font-bold transition-colors duration-300',
+          activeSection === item.id ? 'text-white' : 'text-yellow-200 hover:text-white',
+        ]"
       >
-      <a href="#deneyimler" class="block px-3 py-2 text-yellow-200 hover:text-white font-bold"
-        >DENEYİMLER</a
-      >
-      <a href="#egitim" class="block px-3 py-2 text-yellow-200 hover:text-white font-bold"
-        >EĞİTİM HAYATIM</a
-      >
-      <a href="#yetenekler" class="block px-3 py-2 text-yellow-200 hover:text-white font-bold"
-        >YETENEKLERİM</a
-      >
-      <a href="#sertifikalar" class="block px-3 py-2 text-yellow-200 hover:text-white font-bold"
-        >SERTİFİKALARIM</a
-      >
-      <a href="#iletisim" class="block px-3 py-2 text-yellow-200 hover:text-white font-bold"
-        >İLETİŞİM</a
-      >
+        {{ item.name }}
+      </a>
     </div>
   </nav>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
+
 const open = ref(false)
+const activeSection = ref('')
+const sections = [
+  { id: 'hakkimda', name: 'HAKKIMDA' },
+  { id: 'deneyimler', name: 'DENEYİMLER' },
+  { id: 'egitim', name: 'EĞİTİM HAYATIM' },
+  { id: 'yetenekler', name: 'YETENEKLERİM' },
+  { id: 'iletisim', name: 'İLETİŞİM' },
+]
+
+onMounted(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          activeSection.value = entry.target.id
+        }
+      })
+    },
+    { threshold: 0.5 },
+  )
+
+  const targets = document.querySelectorAll('section[id]')
+  targets.forEach((section) => observer.observe(section))
+
+  onUnmounted(() => {
+    targets.forEach((section) => observer.unobserve(section))
+  })
+})
 </script>
 
 <style scoped>
