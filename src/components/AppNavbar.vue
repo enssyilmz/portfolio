@@ -37,7 +37,7 @@
       class="absolute top-full left-0 w-full bg-yellow-sea-600 shadow-md transition-all duration-300"
     >
       <button
-        v-for="item in sections"
+        v-for="item in props.sections"
         :key="item.id"
         @click="handleMenuClick(item.id)"
         :class="[
@@ -56,13 +56,18 @@ import { ref, onMounted, onUnmounted } from 'vue'
 
 const open = ref(false)
 const activeSection = ref('')
-const sections = [
-  { id: 'hakkimda', name: 'HAKKIMDA' },
-  { id: 'deneyimler', name: 'DENEYİMLER' },
-  { id: 'egitim', name: 'EĞİTİM HAYATIM' },
-  { id: 'yetenekler', name: 'YETENEKLERİM' },
-  { id: 'iletisim', name: 'İLETİŞİM' },
-]
+const props = defineProps({
+  sections: {
+    type: Array,
+    default: () => [
+      { id: 'hakkimda', name: 'HAKKIMDA' },
+      { id: 'deneyimler', name: 'DENEYİMLER' },
+      { id: 'egitim', name: 'EĞİTİM HAYATIM' },
+      { id: 'yetenekler', name: 'YETENEKLERİM' },
+      { id: 'iletisim', name: 'İLETİŞİM' },
+    ],
+  },
+})
 
 function handleMenuClick(id) {
   const el = document.getElementById(id)
