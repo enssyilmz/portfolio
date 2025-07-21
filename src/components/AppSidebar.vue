@@ -8,17 +8,17 @@
         alt="Vesikalik Fotograf"
         class="rounded-full border-8 border-yellow-sea-400 shadow-md object-cover w-48 h-48 mb-4"
       />
-      <a
+      <button
         v-for="item in sections"
         :key="item.id"
-        :href="'#' + item.id"
+        @click="scrollToSection(item.id)"
         :class="[
-          'block font-bold transition-colors duration-300',
+          'block font-bold transition-colors duration-300 bg-transparent border-none cursor-pointer',
           activeSection === item.id ? 'text-white' : 'text-yellow-200 hover:text-white',
         ]"
       >
         {{ item.name }}
-      </a>
+      </button>
     </nav>
   </aside>
 </template>
@@ -34,7 +34,19 @@ const sections = [
   { id: 'yetenekler', name: 'YETENEKLERİM' },
   { id: 'iletisim', name: 'İLETİŞİM' },
 ]
+function scrollToSection(id) {
+  const el = document.getElementById(id)
+  if (!el) return
 
+  // Smooth scroll için alternatif yöntem
+  setTimeout(() => {
+    el.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'nearest',
+    })
+  }, 100)
+}
 onMounted(() => {
   const observer = new IntersectionObserver(
     (entries) => {

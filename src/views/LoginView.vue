@@ -36,12 +36,25 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+import { signInWithEmailAndPassword } from 'firebase/auth'
+import { auth } from '@/firebase/firebase'
+
+const router = useRouter()
 
 const email = ref('')
 const password = ref('')
+const errorMessage = ref('')
 
-function handleLogin() {
-  // Burada login işlemini yapabilirsin (Firebase auth veya kendi backend)
-  alert(`Giriş yapılıyor:\nE-posta: ${email.value}\nŞifre: ${password.value}`)
+async function handleLogin() {
+  try {
+    const userCredential = await signInWithEmailAndPassword(auth, email.value, password.value)
+    console.log('Giriş başarılı:', userCredential.user)
+    localStorage.setItem('userLoggedIn', 'true')
+    router.push('/admin') // Admin paneline yönlendir
+  } catch (error) {
+    console.error('Giriş hatası:', error)
+    errorMessage.value = 'Giriş başarısız. Lütfen bilgilerinizi kontrol edin.'
+  }
 }
 </script>
