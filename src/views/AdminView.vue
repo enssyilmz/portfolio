@@ -18,9 +18,9 @@ const router = useRouter()
 
 async function logout() {
   try {
-    await signOut(auth) // Firebase çıkış
-    localStorage.removeItem('userLoggedIn') // Tarayıcıdan kullanıcıyı sil
-    router.push('/login') // Login sayfasına yönlendir
+    await signOut(auth)
+    localStorage.removeItem('userLoggedIn')
+    router.push('/login')
   } catch (error) {
     console.error('Çıkış hatası:', error)
   }

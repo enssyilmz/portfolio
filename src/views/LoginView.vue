@@ -51,7 +51,7 @@ async function handleLogin() {
     const userCredential = await signInWithEmailAndPassword(auth, email.value, password.value)
     console.log('Giriş başarılı:', userCredential.user)
     localStorage.setItem('userLoggedIn', 'true')
-    router.push('/admin') // Admin paneline yönlendir
+    router.push('/admin')
   } catch (error) {
     console.error('Giriş hatası:', error)
     errorMessage.value = 'Giriş başarısız. Lütfen bilgilerinizi kontrol edin.'

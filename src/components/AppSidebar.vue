@@ -38,7 +38,6 @@ function scrollToSection(id) {
   const el = document.getElementById(id)
   if (!el) return
 
-  // Smooth scroll için alternatif yöntem
   setTimeout(() => {
     el.scrollIntoView({
       behavior: 'smooth',
@@ -57,7 +56,7 @@ onMounted(() => {
       })
     },
     {
-      threshold: 0.5, // %50 görünüyorsa aktif say
+      threshold: 0.5,
     },
   )
 
