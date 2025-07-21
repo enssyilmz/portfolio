@@ -9,7 +9,7 @@
         class="rounded-full border-8 border-yellow-sea-400 shadow-md object-cover w-48 h-48 mb-4"
       />
       <button
-        v-for="item in sections"
+        v-for="item in props.sections"
         :key="item.id"
         @click="scrollToSection(item.id)"
         :class="[
@@ -27,13 +27,18 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 
 const activeSection = ref('')
-const sections = [
-  { id: 'hakkimda', name: 'HAKKIMDA' },
-  { id: 'deneyimler', name: 'DENEYİMLER' },
-  { id: 'egitim', name: 'EĞİTİM HAYATIM' },
-  { id: 'yetenekler', name: 'YETENEKLERİM' },
-  { id: 'iletisim', name: 'İLETİŞİM' },
-]
+const props = defineProps({
+  sections: {
+    type: Array,
+    default: () => [
+      { id: 'hakkimda', name: 'HAKKIMDA' },
+      { id: 'deneyimler', name: 'DENEYİMLER' },
+      { id: 'egitim', name: 'EĞİTİM HAYATIM' },
+      { id: 'yetenekler', name: 'YETENEKLERİM' },
+      { id: 'iletisim', name: 'İLETİŞİM' },
+    ],
+  },
+})
 function scrollToSection(id) {
   const el = document.getElementById(id)
   if (!el) return
