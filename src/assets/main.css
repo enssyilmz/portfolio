@@ -1,18 +1,6 @@
-@import 'tailwindcss';
-
-@theme {
-  --color-yellow-sea-50: #fef9ec;
-  --color-yellow-sea-100: #fdedc8;
-  --color-yellow-sea-200: #fad98d;
-  --color-yellow-sea-300: #f7c152;
-  --color-yellow-sea-400: #f5a623;
-  --color-yellow-sea-500: #ef8611;
-  --color-yellow-sea-600: #d3640c;
-  --color-yellow-sea-700: #af440e;
-  --color-yellow-sea-800: #8f3511;
-  --color-yellow-sea-900: #752c12;
-  --color-yellow-sea-950: #431505;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 @layer base {
   body {
     @apply bg-yellow-sea-50 text-gray-800;
