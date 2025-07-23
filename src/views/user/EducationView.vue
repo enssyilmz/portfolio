@@ -1,6 +1,6 @@
 <template>
   <section id="egitim" class="min-h-screen flex flex-col justify-center items-start gap-4">
-    <h1 class="text-5xl font-bold text-gray-800">EĞİTİM HAYATIM</h1>
+    <h1 class="text-5xl font-bold text-gray-700">EĞİTİM HAYATIM</h1>
     <br />
     <div class="w-full">
       <div class="flex items-center justify-between w-full">

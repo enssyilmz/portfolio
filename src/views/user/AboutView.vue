@@ -1,22 +1,24 @@
 <template>
   <section id="hakkimda" class="min-h-screen flex flex-col justify-center items-start gap-4">
-    <h1 class="text-5xl font-bold">
+    <h1 class="text-5xl font-bold" data-aos="fade-up" data-aos-delay="100">
       <span class="text-gray-700">{{ aboutInfo?.name + ' ' }}</span>
       <span>{{ aboutInfo?.surname }}</span>
     </h1>
-    <h1 class="text-xl">
+    <h1 class="text-xl" data-aos="fade-up" data-aos-delay="200">
       <span class="text-gray-700">{{ aboutInfo?.location + ' ' + '-' + ' ' }}</span>
       <span>{{ aboutInfo?.email }}</span>
     </h1>
     <br />
-    <p class="text-lg text-gray-600">
+    <p class="text-lg text-gray-600" data-aos="fade-right" data-aos-delay="300">
       {{ aboutInfo?.description }}
     </p>
-    <div class="flex gap-4 mt-6">
+    <div class="flex gap-4 mt-6" data-aos="fade-up" data-aos-delay="400">
       <a
         :href="socialLinks?.github"
         target="_blank"
         class="text-gray-600 hover:text-black transition-colors duration-300 text-5xl"
+        data-aos="zoom-in"
+        data-aos-delay="500"
       >
         <font-awesome-icon :icon="['fab', 'github']" />
       </a>
@@ -24,6 +26,8 @@
         :href="socialLinks?.linkedin"
         target="_blank"
         class="text-gray-600 hover:text-blue-600 transition-colors duration-300 text-5xl"
+        data-aos="zoom-in"
+        data-aos-delay="550"
       >
         <font-awesome-icon :icon="['fab', 'linkedin']" />
       </a>
@@ -31,6 +35,8 @@
         :href="socialLinks?.twitter"
         target="_blank"
         class="text-gray-600 hover:text-black transition-colors duration-300 text-5xl"
+        data-aos="zoom-in"
+        data-aos-delay="600"
       >
         <font-awesome-icon :icon="['fab', 'x-twitter']" />
       </a>
@@ -38,6 +44,8 @@
         :href="socialLinks?.instagram"
         target="_blank"
         class="text-gray-600 hover:text-pink-500 transition-colors duration-300 text-5xl"
+        data-aos="zoom-in"
+        data-aos-delay="650"
       >
         <font-awesome-icon :icon="['fab', 'instagram']" />
       </a>
@@ -45,6 +53,8 @@
         :href="socialLinks?.facebook"
         target="_blank"
         class="text-gray-600 hover:text-blue-700 transition-colors duration-300 text-5xl"
+        data-aos="zoom-in"
+        data-aos-delay="700"
       >
         <font-awesome-icon :icon="['fab', 'facebook']" />
       </a>
@@ -52,6 +62,8 @@
         :href="socialLinks?.youtube"
         target="_blank"
         class="text-gray-600 hover:text-red-600 transition-colors duration-300 text-5xl"
+        data-aos="zoom-in"
+        data-aos-delay="750"
       >
         <font-awesome-icon :icon="['fab', 'youtube']" />
       </a>
@@ -62,7 +74,7 @@
 import { doc, getDoc } from 'firebase/firestore'
 import { db } from '@/firebase/firebase'
 import { ref, onMounted } from 'vue'
-
+import AOS from 'aos'
 const aboutInfo = ref(null)
 const socialLinks = ref(null)
 
@@ -79,5 +91,6 @@ onMounted(async () => {
   if (socialSnap.exists()) {
     socialLinks.value = socialSnap.data()
   }
+  AOS.refresh()
 })
 </script>
