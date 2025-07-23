@@ -1,6 +1,6 @@
 <template>
   <section id="deneyimler" class="min-h-screen flex flex-col justify-center items-start gap-4">
-    <h1 class="text-5xl font-bold text-gray-800">DENEYİMLERİM</h1>
+    <h1 class="text-5xl font-bold text-gray-700">DENEYİMLERİM</h1>
     <br />
     <div class="flex flex-col gap-2">
       <div class="flex justify-between items-center">
