@@ -14,14 +14,6 @@
   --color-yellow-sea-950: #431505;
 }
 @layer base {
-  * {
-    scroll-behavior: smooth !important;
-  }
-
-  html {
-    scroll-behavior: smooth !important;
-  }
-
   body {
     @apply bg-yellow-sea-50 text-gray-800;
   }
