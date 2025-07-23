@@ -17,7 +17,8 @@
   body {
     @apply bg-yellow-sea-50 text-gray-800;
   }
-  span {
+  span,
+  label {
     @apply text-yellow-sea-600;
   }
   h1,
