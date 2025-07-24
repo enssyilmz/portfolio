@@ -4,7 +4,7 @@
     class="min-h-screen flex flex-col justify-center items-center px-4 py-16 bg-white"
   >
     <div class="w-full">
-      <h2 class="text-5xl font-bold text-gray-700">İLETİŞİM</h2>
+      <h2 class="text-5xl font-bold">İLETİŞİM</h2>
       <br />
       <form @submit.prevent="handleSubmit" class="space-y-6">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
