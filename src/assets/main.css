@@ -17,6 +17,9 @@
   body {
     @apply bg-yellow-sea-50 text-gray-800;
   }
+  label {
+    @apply font-bold;
+  }
   span,
   label {
     @apply text-yellow-sea-600;
@@ -34,7 +37,8 @@
     @apply text-yellow-sea-500 hover:text-yellow-sea-600;
   }
 
-  .btn {
+  .btn,
+  button {
     @apply bg-yellow-sea-500 text-white hover:bg-yellow-sea-600;
   }
 }
