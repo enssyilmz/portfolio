@@ -1,6 +1,6 @@
 <template>
   <section id="deneyimler" class="min-h-screen flex flex-col justify-center gap-4">
-    <BasePopup v-model="showPopup" :message="'Güncellendi!'" :duration="3000" />
+    <BasePopup v-model="showPopup" :message="'Deneyimler Bölümü Güncellendi!'" :duration="3000" />
     <h1 class="text-3xl font-bold">Deneyimler Bölümünü Düzenle</h1>
     <h2 class="text-xl font-bold mt-4">İlk Şirket</h2>
     <div class="grid grid-cols-2 md:grid-cols-6 gap-4 border p-4 rounded-lg bg-white shadow">
