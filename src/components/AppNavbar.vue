@@ -2,7 +2,6 @@
   <nav
     class="fixed top-0 left-0 right-0 bg-yellow-sea-600 text-white px-4 py-3 flex items-center justify-between z-50 shadow-md lg:hidden"
   >
-    <!-- Menü Butonu -->
     <button @click="open = !open" class="focus:outline-none">
       <svg
         v-if="!open"
@@ -30,8 +29,6 @@
         />
       </svg>
     </button>
-
-    <!-- Menü Öğeleri -->
     <div
       :class="[open ? 'block' : 'hidden']"
       class="absolute top-full left-0 w-full bg-yellow-sea-600 shadow-md transition-all duration-300"
@@ -47,13 +44,30 @@
       >
         {{ item.name }}
       </button>
+      <div v-if="!isAdmin" id="button" class="flex justify-center">
+        <button @click="logout" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">
+          Çıkış Yap
+        </button>
+      </div>
     </div>
   </nav>
 </template>
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
-
+import { signOut } from 'firebase/auth'
+import { auth } from '@/firebase/firebase'
+import { useRouter } from 'vue-router'
+const router = useRouter()
+async function logout() {
+  try {
+    await signOut(auth)
+    localStorage.removeItem('userLoggedIn')
+    router.push('/login')
+  } catch (error) {
+    console.error('Çıkış hatası:', error)
+  }
+}
 const open = ref(false)
 const activeSection = ref('')
 const props = defineProps({

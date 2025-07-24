@@ -1,18 +1,18 @@
 <template>
   <section id="hakkimda" class="min-h-screen flex flex-col justify-center items-start gap-4">
-    <h1 class="text-5xl font-bold" data-aos="fade-up" data-aos-delay="100">
+    <h1 class="text-5xl font-bold">
       <span class="text-gray-700">{{ aboutInfo?.name + ' ' }}</span>
       <span>{{ aboutInfo?.surname }}</span>
     </h1>
-    <h1 class="text-xl" data-aos="fade-up" data-aos-delay="200">
+    <h1 class="text-xl">
       <span class="text-gray-700">{{ aboutInfo?.location + ' ' + '-' + ' ' }}</span>
       <span>{{ aboutInfo?.email }}</span>
     </h1>
     <br />
-    <p class="text-lg text-gray-600" data-aos="fade-right" data-aos-delay="300">
+    <p class="text-lg text-gray-600">
       {{ aboutInfo?.description }}
     </p>
-    <div class="flex gap-4 mt-6" data-aos="fade-up" data-aos-delay="400">
+    <div class="flex gap-4 mt-6">
       <a
         :href="socialLinks?.github"
         target="_blank"
@@ -74,23 +74,17 @@
 import { doc, getDoc } from 'firebase/firestore'
 import { db } from '@/firebase/firebase'
 import { ref, onMounted } from 'vue'
-import AOS from 'aos'
 const aboutInfo = ref(null)
 const socialLinks = ref(null)
-
 onMounted(async () => {
   const aboutRef = doc(db, 'about', 'aboutInfo')
   const socialRef = doc(db, 'about', 'socialLinks')
-
   const [aboutSnap, socialSnap] = await Promise.all([getDoc(aboutRef), getDoc(socialRef)])
-
   if (aboutSnap.exists()) {
     aboutInfo.value = aboutSnap.data()
   }
-
   if (socialSnap.exists()) {
     socialLinks.value = socialSnap.data()
   }
-  AOS.refresh()
 })
 </script>
