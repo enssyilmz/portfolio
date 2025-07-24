@@ -1,8 +1,25 @@
 <template>
-  <section id="egitim" class="min-h-screen flex flex-col justify-center items-start gap-4">
-    <h1 class="text-5xl font-bold">EĞİTİM HAYATIM</h1>
+  <section
+    id="egitim"
+    class="min-h-screen flex flex-col justify-center items-start gap-4 overflow-x-hidden"
+  >
+    <h1
+      ref="mainTitle"
+      :class="[
+        'text-5xl font-bold transition-all duration-1000 ease-out',
+        mainTitleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10',
+      ]"
+    >
+      EĞİTİM HAYATIM
+    </h1>
     <br />
-    <div class="w-full">
+    <div
+      ref="firstEducation"
+      :class="[
+        'w-full transition-all duration-1000 ease-out delay-200',
+        firstEduVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10',
+      ]"
+    >
       <div class="flex items-center justify-between w-full">
         <h1 class="text-xl font-semibold text-gray-800">{{ educationInfo?.firstUniversity }}</h1>
         <span class="text-sm">{{ educationInfo?.firstUniversityDate }}</span>
@@ -13,7 +30,13 @@
       <p class="text-xl text-gray-600">{{ educationInfo?.firstUniversityDegree }}</p>
     </div>
     <br />
-    <div class="w-full">
+    <div
+      ref="secondEducation"
+      :class="[
+        'w-full transition-all duration-1000 ease-out delay-400',
+        secondEduVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10',
+      ]"
+    >
       <div class="flex items-center justify-between w-full">
         <h1 class="text-xl font-semibold text-gray-800">{{ educationInfo?.secondUniversity }}</h1>
         <span class="text-sm"> {{ educationInfo?.secondUniversityDate }}</span>
@@ -29,8 +52,44 @@
 import { doc, getDoc } from 'firebase/firestore'
 import { db } from '@/firebase/firebase'
 import { ref, onMounted } from 'vue'
+import { useIntersectionObserver } from '@vueuse/core'
 
 const educationInfo = ref(null)
+
+// Element refs
+const mainTitle = ref(null)
+const firstEducation = ref(null)
+const secondEducation = ref(null)
+
+// Visibility states
+const mainTitleVisible = ref(false)
+const firstEduVisible = ref(false)
+const secondEduVisible = ref(false)
+
+// Intersection observers
+useIntersectionObserver(
+  mainTitle,
+  ([{ isIntersecting }]) => {
+    mainTitleVisible.value = isIntersecting
+  },
+  { threshold: 0.5 },
+)
+
+useIntersectionObserver(
+  firstEducation,
+  ([{ isIntersecting }]) => {
+    firstEduVisible.value = isIntersecting
+  },
+  { threshold: 0.5 },
+)
+
+useIntersectionObserver(
+  secondEducation,
+  ([{ isIntersecting }]) => {
+    secondEduVisible.value = isIntersecting
+  },
+  { threshold: 0.5 },
+)
 
 onMounted(async () => {
   const educationRef = doc(db, 'education', 'educationInfo')

@@ -1,8 +1,25 @@
 <template>
-  <section id="deneyimler" class="min-h-screen flex flex-col justify-center items-start gap-4">
-    <h1 class="text-5xl font-bold">DENEYİMLERİM</h1>
+  <section
+    id="deneyimler"
+    class="min-h-screen flex flex-col justify-center items-start gap-4 overflow-x-hidden"
+  >
+    <h1
+      ref="mainTitle"
+      :class="[
+        'text-5xl font-bold transition-all duration-1000 ease-out',
+        mainTitleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10',
+      ]"
+    >
+      DENEYİMLERİM
+    </h1>
     <br />
-    <div class="flex flex-col gap-2">
+    <div
+      ref="firstExperience"
+      :class="[
+        'flex flex-col gap-2 transition-all duration-1000 ease-out delay-200',
+        firstExpVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10',
+      ]"
+    >
       <div class="flex justify-between items-center">
         <h1 class="text-xl font-semibold text-gray-800">
           {{ experienceInfo?.firstCompany }}
@@ -15,7 +32,13 @@
       </p>
     </div>
     <br />
-    <div class="flex flex-col gap-2">
+    <div
+      ref="secondExperience"
+      :class="[
+        'flex flex-col gap-2 transition-all duration-1000 ease-out delay-400',
+        secondExpVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10',
+      ]"
+    >
       <div class="flex justify-between items-center">
         <h1 class="text-xl font-semibold text-gray-800">{{ experienceInfo?.secondCompany }}</h1>
         <span class="text-sm">{{ experienceInfo?.secondCompanyDate }}</span>
@@ -31,8 +54,44 @@
 import { doc, getDoc } from 'firebase/firestore'
 import { db } from '@/firebase/firebase'
 import { ref, onMounted } from 'vue'
+import { useIntersectionObserver } from '@vueuse/core'
 
 const experienceInfo = ref(null)
+
+// Element refs
+const mainTitle = ref(null)
+const firstExperience = ref(null)
+const secondExperience = ref(null)
+
+// Visibility states
+const mainTitleVisible = ref(false)
+const firstExpVisible = ref(false)
+const secondExpVisible = ref(false)
+
+// Intersection observers
+useIntersectionObserver(
+  mainTitle,
+  ([{ isIntersecting }]) => {
+    mainTitleVisible.value = isIntersecting
+  },
+  { threshold: 0.5 },
+)
+
+useIntersectionObserver(
+  firstExperience,
+  ([{ isIntersecting }]) => {
+    firstExpVisible.value = isIntersecting
+  },
+  { threshold: 0.5 },
+)
+
+useIntersectionObserver(
+  secondExperience,
+  ([{ isIntersecting }]) => {
+    secondExpVisible.value = isIntersecting
+  },
+  { threshold: 0.5 },
+)
 
 onMounted(async () => {
   const experienceRef = doc(db, 'experience', 'experienceInfo')

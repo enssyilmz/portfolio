@@ -1,6 +1,10 @@
 <template>
   <section id="egitim" class="min-h-screen flex flex-col justify-center gap-4">
-    <BasePopup v-model="showPopup" :message="'Güncellendi!'" :duration="3000" />
+    <BasePopup
+      v-model="showPopup"
+      :message="'Eğitim Hayatım Bölümü Güncellendi!'"
+      :duration="3000"
+    />
     <h1 class="text-3xl font-bold">Eğitim Hayatım Bölümünü Düzenle</h1>
     <h2 class="text-xl font-bold mt-4">İlk Üniversite</h2>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 border p-4 rounded-lg bg-white shadow">

@@ -58,12 +58,8 @@
             required
           ></textarea>
         </div>
-
-        <div class="text-center">
-          <button
-            type="submit"
-            class="bg-yellow-sea-400 hover:bg-yellow-sea-600 text-white px-8 py-3 rounded-full text-lg font-semibold transition-all duration-300"
-          >
+        <div id="button" class="flex justify-center">
+          <button @click="saveChanges" class="btn px-4 py-2 rounded-lg" type="submit">
             Gönder
           </button>
         </div>
