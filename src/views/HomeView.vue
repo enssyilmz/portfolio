@@ -2,7 +2,7 @@
   <div>
     <AppNavbar />
     <Sidebar />
-    <main class="lg:ml-64 p-6 bg-gray-50 min-h-screen">
+    <main class="lg:ml-64 p-6 bg-gray-50 min-h-screen overflow-x-hidden">
       <AboutView />
       <hr class="my-12 border-t-2 border-gray-300" />
       <ExperienceView />

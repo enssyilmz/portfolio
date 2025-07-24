@@ -4,6 +4,7 @@
   >
     <nav class="h-full flex justify-center flex-col gap-3 px-4 items-center text-center">
       <img
+        v-if="!isAdmin"
         src="/src/assets/vesikalik.jpg"
         alt="Vesikalik Fotograf"
         class="rounded-full border-8 border-yellow-sea-400 shadow-md object-cover w-48 h-48 mb-4"
@@ -19,12 +20,30 @@
       >
         {{ item.name }}
       </button>
+      <div v-if="!isAdmin" id="button" class="flex justify-center">
+        <button @click="logout" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">
+          Çıkış Yap
+        </button>
+      </div>
     </nav>
   </aside>
 </template>
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+import { signOut } from 'firebase/auth'
+import { auth } from '@/firebase/firebase'
+import { useRouter } from 'vue-router'
+const router = useRouter()
+async function logout() {
+  try {
+    await signOut(auth)
+    localStorage.removeItem('userLoggedIn')
+    router.push('/login')
+  } catch (error) {
+    console.error('Çıkış hatası:', error)
+  }
+}
 
 const activeSection = ref('')
 const props = defineProps({
