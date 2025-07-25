@@ -56,17 +56,14 @@ import { useIntersectionObserver } from '@vueuse/core'
 
 const educationInfo = ref(null)
 
-// Element refs
 const mainTitle = ref(null)
 const firstEducation = ref(null)
 const secondEducation = ref(null)
 
-// Visibility states
 const mainTitleVisible = ref(false)
 const firstEduVisible = ref(false)
 const secondEduVisible = ref(false)
 
-// Intersection observers
 useIntersectionObserver(
   mainTitle,
   ([{ isIntersecting }]) => {
