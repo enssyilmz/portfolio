@@ -20,7 +20,7 @@
       >
         {{ item.name }}
       </button>
-      <div v-if="!isAdmin" id="button" class="flex justify-center">
+      <div v-if="isAdmin" id="button" class="flex justify-center">
         <button @click="logout" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">
           Çıkış Yap
         </button>
@@ -53,9 +53,13 @@ const props = defineProps({
       { id: 'hakkimda', name: 'HAKKIMDA' },
       { id: 'deneyimler', name: 'DENEYİMLER' },
       { id: 'egitim', name: 'EĞİTİM HAYATIM' },
-      { id: 'yetenekler', name: 'YETENEKLERİM' },
+      { id: 'beceriler', name: 'BECERİLERİM' },
       { id: 'iletisim', name: 'İLETİŞİM' },
     ],
+  },
+  isAdmin: {
+    type: Boolean,
+    default: false,
   },
 })
 function scrollToSection(id) {

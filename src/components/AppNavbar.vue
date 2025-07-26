@@ -77,9 +77,13 @@ const props = defineProps({
       { id: 'hakkimda', name: 'HAKKIMDA' },
       { id: 'deneyimler', name: 'DENEYİMLER' },
       { id: 'egitim', name: 'EĞİTİM HAYATIM' },
-      { id: 'yetenekler', name: 'YETENEKLERİM' },
+      { id: 'beceriler', name: 'BECERİLERİM' },
       { id: 'iletisim', name: 'İLETİŞİM' },
     ],
+  },
+  isAdmin: {
+    type: Boolean,
+    default: true,
   },
 })
 

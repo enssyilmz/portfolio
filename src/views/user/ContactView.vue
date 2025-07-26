@@ -1,8 +1,6 @@
 <template>
-  <section
-    id="iletisim"
-    class="min-h-screen flex flex-col justify-center items-center px-4 py-16 bg-white"
-  >
+  <section id="iletisim" class="min-h-screen flex flex-col justify-center items-center px-4 py-16">
+    <BasePopup v-model="showPopup" :message="'Mesajınız gönderildi!'" :duration="3000" />
     <div class="w-full">
       <h2
         ref="mainTitle"
@@ -118,7 +116,10 @@
 import { ref } from 'vue'
 import { db } from '@/firebase/firebase'
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore'
+import BasePopup from '@/components/BasePopup.vue'
 import { useIntersectionObserver } from '@vueuse/core'
+
+const showPopup = ref(false)
 
 const mainTitle = ref(null)
 const nameField = ref(null)
@@ -202,7 +203,7 @@ async function handleSubmit() {
       message: form.value.Message,
       date: serverTimestamp(),
     })
-    alert('Mesajınız gönderildi! 💌')
+    showPopup.value = true
     form.value = {
       FirstName: '',
       LastName: '',
