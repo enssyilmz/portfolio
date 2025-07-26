@@ -1,5 +1,9 @@
 <template>
-  <section id="iletisim" class="min-h-screen flex flex-col justify-center items-center px-4 py-16">
+  <section
+    v-if="Contact"
+    id="iletisim"
+    class="min-h-screen flex flex-col justify-center items-center px-4 py-16"
+  >
     <BasePopup v-model="showPopup" :message="'Mesajınız gönderildi!'" :duration="3000" />
     <div class="w-full">
       <h2
