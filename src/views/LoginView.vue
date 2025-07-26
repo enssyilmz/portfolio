@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen flex justify-center items-center bg-gray-100">
+  <div class="min-h-screen flex justify-center items-center bg-seasalt">
     <form @submit.prevent="handleLogin" class="bg-white p-8 rounded shadow-md w-full max-w-md">
       <h2 class="text-2xl font-bold mb-6 text-center">Giriş Yap</h2>
       <div class="mb-4">
@@ -10,7 +10,7 @@
           v-model="email"
           required
           placeholder="example@mail.com"
-          class="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-yellow-500"
+          class="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-cocoa-brown"
         />
       </div>
       <div class="mb-6">
@@ -21,12 +21,12 @@
           v-model="password"
           required
           placeholder="Şifrenizi girin"
-          class="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-yellow-500"
+          class="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-cocoa-brown"
         />
       </div>
       <button
         type="submit"
-        class="w-full bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-2 rounded transition-colors"
+        class="w-full bg-cocoa-brown hover:bg-orange-web text-white font-bold py-2 rounded transition-colors"
       >
         Giriş Yap
       </button>

@@ -1,45 +1,59 @@
 <template>
   <nav
-    class="fixed top-0 left-0 right-0 bg-yellow-sea-600 text-white px-4 py-3 flex items-center justify-between z-50 shadow-md lg:hidden"
+    class="fixed top-0 left-0 right-0 bg-cocoa-brown px-4 py-3 flex items-center justify-between z-50 shadow-md lg:hidden"
   >
-    <button @click="open = !open" class="focus:outline-none">
-      <svg
-        v-if="!open"
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-6 w-6"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
+    <div class="ml-auto">
+      <button
+        @click="open = !open"
+        class="focus:outline-none bg-cocoa-brown rounded flex items-center justify-center w-8 h-8"
       >
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
-      </svg>
-      <svg
-        v-else
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-6 w-6"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M6 18L18 6M6 6l12 12"
-        />
-      </svg>
-    </button>
+        <svg
+          v-if="!open"
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 8h16M4 16h16"
+          />
+        </svg>
+        <div v-else class="bg-cocoa-brown rounded flex items-center justify-center w-8 h-8">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </div>
+      </button>
+    </div>
+
     <div
       :class="[open ? 'block' : 'hidden']"
-      class="absolute top-full left-0 w-full bg-yellow-sea-600 shadow-md transition-all duration-300"
+      class="absolute top-full left-0 w-full bg-cocoa-brown shadow-md transition-all duration-300"
     >
       <button
         v-for="item in props.sections"
         :key="item.id"
         @click="handleMenuClick(item.id)"
         :class="[
-          'block px-3 py-2 font-bold transition-colors duration-300 w-full text-left',
-          activeSection === item.id ? 'text-white' : 'text-yellow-200 hover:text-white',
+          'block bg-transparent px-3 py-2 font-bold transition-colors duration-300 w-full text-left',
+          activeSection === item.id
+            ? 'text-champagne-pink hover:text-white'
+            : 'text-buff hover:text-white',
         ]"
       >
         {{ item.name }}

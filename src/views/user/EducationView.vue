@@ -24,10 +24,10 @@
         <h1 class="text-xl font-semibold text-gray-800">{{ educationInfo?.firstUniversity }}</h1>
         <span class="text-sm">{{ educationInfo?.firstUniversityDate }}</span>
       </div>
-      <h2 class="text-xl font-semibold text-gray-500 mt-1">
+      <h2 class="text-xl font-semibold text-paynes-gray mt-1">
         {{ educationInfo?.firstUniversityDepartment }}
       </h2>
-      <p class="text-xl text-gray-600">{{ educationInfo?.firstUniversityDegree }}</p>
+      <p class="text-xl text-charcoal">{{ educationInfo?.firstUniversityDegree }}</p>
     </div>
     <br />
     <div

@@ -1,9 +1,9 @@
 <template>
-  <section id="beceriler" class="min-h-screen px-6 py-12 bg-gray-50">
+  <section id="beceriler" class="min-h-screen flex flex-col justify-center gap-4 overflow-x-hidden">
     <h1
       ref="mainTitle"
       :class="[
-        'text-5xl font-bold mb-6 text-yellow-600 transition-all duration-1000 ease-out',
+        'text-5xl font-bold mb-6 transition-all duration-1000 ease-out',
         mainTitleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10',
       ]"
     >
@@ -18,13 +18,9 @@
           firstFieldVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10',
         ]"
       >
-        <h2 class="text-2xl font-bold mb-3 text-gray-800">Programlama Dilleri</h2>
-        <ul class="list-disc list-inside text-gray-700 space-y-1">
-          <li>C</li>
-          <li>C++</li>
-          <li>C#</li>
-          <li>Java</li>
-          <li>JavaScript</li>
+        <h2 class="text-2xl mb-3 font-semibold text-gray-800">Programlama Dilleri</h2>
+        <ul class="list-disc list-inside font-semibold text-paynes-gray space-y-1">
+          <li v-for="(lang, i) in skillsList?.programmingLanguages" :key="i">{{ lang }}</li>
         </ul>
       </div>
 
@@ -35,17 +31,9 @@
           secondFieldVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-y-10',
         ]"
       >
-        <h2 class="text-2xl font-bold mb-3 text-gray-800">Web Geliştirme</h2>
-        <ul class="list-disc list-inside text-gray-700 space-y-1">
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>PHP</li>
-          <li>Bootstrap</li>
-          <li>TailwindCSS</li>
-          <li>ASP.NET</li>
-          <li>React</li>
-          <li>Node.js</li>
-          <li>Vue.js</li>
+        <h2 class="text-2xl font-semibold mb-3 text-gray-800">Web Geliştirme</h2>
+        <ul class="list-disc list-inside font-semibold text-paynes-gray space-y-1">
+          <li v-for="(lang, i) in skillsList?.webDevelopment" :key="i">{{ lang }}</li>
         </ul>
       </div>
 
@@ -56,19 +44,21 @@
           thirdFieldVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10',
         ]"
       >
-        <h2 class="text-2xl font-bold mb-3 text-gray-800">Backend & Veritabanı</h2>
-        <ul class="list-disc list-inside text-gray-700 space-y-1">
-          <li>MSSQL</li>
-          <li>Firebase (Auth, Firestore, Hosting)</li>
-          <li>Supabase</li>
+        <h2 class="text-2xl font-semibold mb-3 text-gray-800">Backend & Veritabanı</h2>
+        <ul class="list-disc list-inside font-semibold text-paynes-gray space-y-1">
+          <li v-for="(lang, i) in skillsList?.backendAndDatabase" :key="i">{{ lang }}</li>
         </ul>
       </div>
     </div>
   </section>
 </template>
 <script setup>
-import { ref } from 'vue'
+import { doc, getDoc } from 'firebase/firestore'
+import { db } from '@/firebase/firebase'
+import { ref, onMounted } from 'vue'
 import { useIntersectionObserver } from '@vueuse/core'
+
+const skillsList = ref(null)
 
 const mainTitle = ref(false)
 const firstField = ref(false)
@@ -108,4 +98,12 @@ useIntersectionObserver(
   },
   { threshold: 0.5 },
 )
+onMounted(async () => {
+  const skillsRef = doc(db, 'skills', 'skillsList')
+  const [skillsSnap] = await Promise.all([getDoc(skillsRef)])
+
+  if (skillsSnap.exists()) {
+    skillsList.value = skillsSnap.data()
+  }
+})
 </script>

@@ -1,13 +1,11 @@
 <template>
-  <aside
-    class="hidden lg:block fixed top-0 left-0 h-full w-64 bg-yellow-sea-600 text-white shadow-lg z-10"
-  >
+  <aside class="hidden lg:block fixed top-0 left-0 h-full w-64 bg-cocoa-brown shadow-lg z-10">
     <nav class="h-full flex justify-center flex-col gap-3 px-4 items-center text-center">
       <img
         v-if="!isAdmin"
         src="/src/assets/vesikalik.jpg"
         alt="Vesikalik Fotograf"
-        class="rounded-full border-8 border-yellow-sea-400 shadow-md object-cover w-48 h-48 mb-4"
+        class="rounded-full border-8 border-orange-web shadow-md object-cover w-48 h-48 mb-4"
       />
       <button
         v-for="item in props.sections"
@@ -15,7 +13,9 @@
         @click="scrollToSection(item.id)"
         :class="[
           'block font-bold transition-colors duration-300 bg-transparent border-none cursor-pointer',
-          activeSection === item.id ? 'text-white' : 'text-yellow-200 hover:text-white',
+          activeSection === item.id
+            ? 'text-champagne-pink hover:text-white'
+            : 'text-buff hover:text-white',
         ]"
       >
         {{ item.name }}

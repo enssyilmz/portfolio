@@ -1,10 +1,10 @@
 <template>
   <div
     v-if="visible"
-    class="fixed top-4 right-4 bg-yellow-sea-600 px-4 py-2 rounded-lg shadow-lg flex items-center justify-between gap-4 z-50"
+    class="fixed top-4 right-4 bg-cocoa-brown px-4 py-2 rounded-lg shadow-lg flex items-center justify-between gap-4 z-50"
   >
     <span class="text-white">{{ message }}</span>
-    <button @click="close" class="bg-yellow-sea-600 font-bold">×</button>
+    <button @click="close" class="bg-cocoa-brown font-bold">×</button>
   </div>
 </template>
 <script setup>
