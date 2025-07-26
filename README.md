@@ -3,6 +3,8 @@
 MeyBlog, Vue.js ve Firebase kullanarak oluşturduğum kişisel blog platformudur.  
 Kullanıcı dostu arayüzü ve admin paneli sayesinde içerik yönetimi kolaydır.  
 Responsive tasarımı ile hem masaüstü hem de mobil cihazlarda mükemmel görünür.
+
+
 https://enesyilmaz.netlify.app
 ## Özellikler
 
