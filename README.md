@@ -4,7 +4,6 @@ MeyBlog, Vue.js ve Firebase kullanarak oluşturduğum kişisel blog platformudur
 Kullanıcı dostu arayüzü ve admin paneli sayesinde içerik yönetimi kolaydır.  
 Responsive tasarımı ile hem masaüstü hem de mobil cihazlarda mükemmel görünür.
 
-
 https://enesyilmaz.netlify.app
 ## Özellikler
 
@@ -17,7 +16,7 @@ https://enesyilmaz.netlify.app
 ## Kurulum
 
 -Depoyu klonlayın:  
- git clone https://github.com/kullaniciadi/meyblog.git
+ git clone https://github.com/enssyilmz/portfolio.git
 
 -Proje dizinine gidin:
 cd meyblog
