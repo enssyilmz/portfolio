@@ -58,9 +58,9 @@ import { useIntersectionObserver } from '@vueuse/core'
 
 const experienceInfo = ref(null)
 
-const mainTitle = ref(null)
-const firstExperience = ref(null)
-const secondExperience = ref(null)
+const mainTitle = ref(false)
+const firstExperience = ref(false)
+const secondExperience = ref(false)
 
 const mainTitleVisible = ref(false)
 const firstExpVisible = ref(false)

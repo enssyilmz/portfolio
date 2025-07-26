@@ -1,7 +1,7 @@
 <template>
   <div>
-    <AppNavbar :sections="adminSections" />
-    <Sidebar :sections="adminSections" />
+    <AppNavbar :sections="adminSections" :isAdmin="true" />
+    <Sidebar :sections="adminSections" :isAdmin="true" />
     <main class="lg:ml-64 p-6 bg-gray-50 min-h-screen">
       <AboutAdminView />
       <hr class="my-12 border-t-2 border-gray-300" />

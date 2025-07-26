@@ -33,8 +33,8 @@
     <div
       ref="socialLink"
       :class="[
-        'flex gap-4 mt-4 transition-all duration-1000 ease-out delay-600',
-        socialLinkVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10',
+        'flex gap-4 mt-4 transition-all duration-1000 ease-out delay-400',
+        socialLinkVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10',
       ]"
     >
       <a
