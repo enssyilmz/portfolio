@@ -1,5 +1,9 @@
 <template>
-  <section id="hakkimda" class="min-h-screen flex flex-col justify-center items-start gap-4">
+  <section
+    v-if="aboutInfo"
+    id="hakkimda"
+    class="min-h-screen flex flex-col justify-center items-start gap-4"
+  >
     <h1
       ref="nameAndSurname"
       :class="[
