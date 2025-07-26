@@ -30,7 +30,7 @@ const adminSections = [
   { id: 'hakkimda', name: 'HAKKIMDAYI DÜZENLE' },
   { id: 'deneyimler', name: 'DENEYİMLERİ DÜZENLE' },
   { id: 'egitim', name: 'EĞİTİM HAYATINI DÜZENLE' },
-  { id: 'yetenekler', name: 'YETENEKLERİNİ DÜZENLE' },
+  { id: 'beceriler', name: 'BECERİLERİNİ DÜZENLE' },
   { id: 'iletisim', name: 'İLETİŞİM DÜZENLE' },
 ]
 </script>

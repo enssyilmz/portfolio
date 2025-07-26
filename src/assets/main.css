@@ -1,28 +1,26 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-yellow-sea-50: #fef9ec;
-  --color-yellow-sea-100: #fdedc8;
-  --color-yellow-sea-200: #fad98d;
-  --color-yellow-sea-300: #f7c152;
-  --color-yellow-sea-400: #f5a623;
-  --color-yellow-sea-500: #ef8611;
-  --color-yellow-sea-600: #d3640c;
-  --color-yellow-sea-700: #af440e;
-  --color-yellow-sea-800: #8f3511;
-  --color-yellow-sea-900: #752c12;
-  --color-yellow-sea-950: #431505;
+  --color-seasalt: #f9fafb;
+  --color-orange-web: #f5a623;
+  --color-cocoa-brown: #d3640c;
+  --color-buff: #e6af84;
+  --color-champagne-pink: #f0d5c0;
+  --color-glaucous: #617494;
+  --color-paynes-gray: #4c5b74;
+  --color-charcoal: #364153;
 }
+
 @layer base {
   body {
-    @apply bg-yellow-sea-50 text-gray-800;
+    @apply bg-seasalt text-paynes-gray;
   }
   label {
     @apply font-bold;
   }
   span,
   label {
-    @apply text-yellow-sea-600;
+    @apply text-cocoa-brown;
   }
   h1,
   h2,
@@ -30,15 +28,15 @@
   h4,
   h5,
   h6 {
-    @apply font-bold text-yellow-sea-600;
+    @apply font-bold text-cocoa-brown;
   }
 
   a {
-    @apply text-yellow-sea-500 hover:text-yellow-sea-600;
+    @apply text-buff hover:text-cocoa-brown;
   }
 
   .btn,
   button {
-    @apply bg-yellow-sea-500 text-white hover:bg-yellow-sea-600;
+    @apply bg-buff text-white hover:bg-cocoa-brown;
   }
 }

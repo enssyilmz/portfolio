@@ -1,15 +1,15 @@
 <template>
   <section id="iletisim" class="min-h-screen flex flex-col justify-center gap-6 px-4 py-8">
-    <h1 class="text-3xl font-bold text-center md:text-left">Gelen İletişim Mesajları</h1>
+    <h1 class="text-3xl font-bold">İletişim Bölümünü Düzenle</h1>
 
-    <div v-if="messages.length === 0" class="text-gray-500 text-center">
+    <div v-if="messages.length === 0" class="text-paynes-gray text-center">
       Henüz mesaj gönderilmemiş.
     </div>
 
     <div v-else class="overflow-x-auto rounded-lg shadow border bg-white">
       <table class="min-w-full table-auto">
         <thead>
-          <tr class="bg-yellow-500 text-white text-sm md:text-base">
+          <tr class="bg-cocoa-brown text-white text-sm md:text-base">
             <th class="p-3 text-left whitespace-nowrap">Ad Soyad</th>
             <th class="p-3 text-left whitespace-nowrap">E-posta</th>
             <th class="p-3 text-left whitespace-nowrap">Konu</th>
@@ -21,7 +21,7 @@
           <tr
             v-for="msg in messages"
             :key="msg.id"
-            class="border-b hover:bg-yellow-100 transition duration-300 text-sm md:text-base"
+            class="border hover:bg-yellow-100 transition duration-300 text-sm md:text-base shadow"
           >
             <td class="p-3 whitespace-nowrap">{{ msg.firstName }} {{ msg.lastName }}</td>
             <td class="p-3 whitespace-nowrap">{{ msg.email }}</td>
