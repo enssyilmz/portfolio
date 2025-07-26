@@ -77,7 +77,7 @@ async function logout() {
   try {
     await signOut(auth)
     localStorage.removeItem('userLoggedIn')
-    router.push('/login')
+    router.push('/')
   } catch (error) {
     console.error('Çıkış hatası:', error)
   }

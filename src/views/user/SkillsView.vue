@@ -1,5 +1,9 @@
 <template>
-  <section id="beceriler" class="min-h-screen flex flex-col justify-center gap-4 overflow-x-hidden">
+  <section
+    v-if="skillsList"
+    id="beceriler"
+    class="min-h-screen flex flex-col justify-center gap-4 overflow-x-hidden"
+  >
     <h1
       ref="mainTitle"
       :class="[
