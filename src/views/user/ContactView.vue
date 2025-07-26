@@ -1,6 +1,5 @@
 <template>
   <section
-    v-if="Contact"
     id="iletisim"
     class="min-h-screen flex flex-col justify-center items-center px-4 py-16"
   >
