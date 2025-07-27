@@ -1,6 +1,5 @@
 <template>
   <section
-    v-if="educationInfo"
     id="egitim"
     class="min-h-screen flex flex-col justify-center items-start gap-4 overflow-x-hidden"
   >
