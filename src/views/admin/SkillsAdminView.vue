@@ -1,10 +1,10 @@
 <template>
   <section id="beceriler" class="min-h-screen flex flex-col justify-center gap-4">
     <BasePopup v-model="showPopup" :message="'Yetenekler Güncellendi!'" :duration="3000" />
-    <h1 class="text-3xl font-bold">Beceriler Bölümünü Düzenle</h1>
+    <h1 class="text-3xl md:text-5xl font-bold">Beceriler Bölümünü Düzenle</h1>
 
     <div class="grid grid-cols-2 gap-4 border p-4 rounded-lg bg-white shadow">
-      <label for="programmingLanguages">Programlama Dilleri</label>
+      <label for="programmingLanguages" class="text-sm md:text-base font-medium">Programlama Dilleri</label>
       <textarea
         id="programmingLanguages"
         v-model="skillsList.programmingLanguagesText"
@@ -14,7 +14,7 @@
     </div>
 
     <div class="grid grid-cols-2 gap-4 border p-4 rounded-lg bg-white shadow">
-      <label for="webDevelopment">Web Geliştirme</label>
+      <label for="webDevelopment" class="text-sm md:text-base font-medium">Web Geliştirme</label>
       <textarea
         id="webDevelopment"
         v-model="skillsList.webDevelopmentText"
@@ -24,7 +24,7 @@
     </div>
 
     <div class="grid grid-cols-2 gap-4 border p-4 rounded-lg bg-white shadow">
-      <label for="backendAndDatabase">Backend & Veritabanı</label>
+      <label for="backendAndDatabase" class="text-sm md:text-base font-medium">Backend & Veritabanı</label>
       <textarea
         id="backendAndDatabase"
         v-model="skillsList.backendAndDatabaseText"

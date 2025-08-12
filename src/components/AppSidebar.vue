@@ -1,5 +1,5 @@
 <template>
-  <aside class="hidden lg:block fixed top-0 left-0 h-full w-64 bg-cocoa-brown shadow-lg z-10">
+  <aside class="hidden md:block fixed top-0 left-0 h-full w-64 bg-cocoa-brown shadow-lg z-10 text-md">
     <nav class="h-full flex justify-center flex-col gap-3 px-4 items-center text-center">
       <img
         v-if="!isAdmin"

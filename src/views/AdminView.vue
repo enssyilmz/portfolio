@@ -2,7 +2,7 @@
   <div>
     <AppNavbar :sections="adminSections" :isAdmin="true" />
     <Sidebar :sections="adminSections" :isAdmin="true" />
-    <main class="lg:ml-64 p-6 bg-gray-50 min-h-screen">
+    <main class="md:ml-64 p-6 bg-gray-50 min-h-screen pt-16 md:pt-6">
       <AboutAdminView />
       <hr class="my-12 border-t-2 border-gray-300" />
       <ExperienceAdminView />

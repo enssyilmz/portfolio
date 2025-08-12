@@ -1,18 +1,23 @@
 <template>
   <section
-    v-if="educationInfo"
     id="egitim"
     class="min-h-screen flex flex-col justify-center items-start gap-4 overflow-x-hidden"
   >
-    <h1
-      ref="mainTitle"
-      :class="[
-        'text-5xl font-bold transition-all duration-1000 ease-out',
-        mainTitleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10',
-      ]"
-    >
-      EĞİTİM HAYATIM
-    </h1>
+    <div v-if="!educationInfo" class="flex flex-col items-center justify-center">
+      <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-web"></div>
+      <p class="mt-4 text-lg text-gray-600">Eğitim bilgileri yükleniyor...</p>
+    </div>
+
+    <div v-else class="w-full">
+      <h1
+        ref="mainTitle"
+        :class="[
+          'text-3xl md:text-5xl font-bold transition-all duration-1000 ease-out',
+          mainTitleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10',
+        ]"
+      >
+        EĞİTİM HAYATIM
+      </h1>
     <br />
     <div
       ref="firstEducation"
@@ -22,13 +27,13 @@
       ]"
     >
       <div class="flex items-center justify-between w-full">
-        <h1 class="text-xl font-semibold text-gray-800">{{ educationInfo?.firstUniversity }}</h1>
-        <span class="text-sm">{{ educationInfo?.firstUniversityDate }}</span>
+        <h1 class="text-lg md:text-xl font-semibold text-gray-800">{{ educationInfo?.firstUniversity }}</h1>
+        <span class="text-xs md:text-sm">{{ educationInfo?.firstUniversityDate }}</span>
       </div>
-      <h2 class="text-xl font-semibold text-paynes-gray mt-1">
+      <h2 class="text-lg md:text-xl font-semibold text-paynes-gray mt-1">
         {{ educationInfo?.firstUniversityDepartment }}
       </h2>
-      <p class="text-xl text-charcoal">{{ educationInfo?.firstUniversityDegree }}</p>
+      <p class="text-base md:text-xl text-charcoal">{{ educationInfo?.firstUniversityDegree }}</p>
     </div>
     <br />
     <div
@@ -38,14 +43,15 @@
         secondEduVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10',
       ]"
     >
-      <div class="flex items-center justify-between w-full">
-        <h1 class="text-xl font-semibold text-gray-800">{{ educationInfo?.secondUniversity }}</h1>
-        <span class="text-sm"> {{ educationInfo?.secondUniversityDate }}</span>
+      <div class="flex justify-between items-center">
+        <h1 class="text-lg md:text-xl font-semibold text-gray-800 flex-1 mr-4">{{ educationInfo?.secondUniversity }}</h1>
+        <span class="text-xs md:text-sm flex-shrink-0">{{ educationInfo?.secondUniversityDate }}</span>
       </div>
-      <h2 class="text-xl font-semibold text-gray-500 mt-1">
+      <h2 class="text-lg md:text-xl font-semibold text-gray-500 mt-1">
         {{ educationInfo?.secondUniversityDepartment }}
       </h2>
-      <p class="text-xl text-gray-600">{{ educationInfo?.secondUniversityDegree }}</p>
+      <p class="text-base md:text-xl text-gray-600">{{ educationInfo?.secondUniversityDegree }}</p>
+    </div>
     </div>
   </section>
 </template>
