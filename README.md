@@ -1,51 +1,51 @@
-## Proje Hakkında
+## About the Project
 
-MeyBlog, Vue.js ve Firebase kullanarak oluşturduğum kişisel blog platformudur.  
-Kullanıcı dostu arayüzü ve admin paneli sayesinde içerik yönetimi kolaydır.  
-Responsive tasarımı ile hem masaüstü hem de mobil cihazlarda mükemmel görünür.
+MeyBlog is a personal blog platform I developed using Vue.js and Firebase.  
+With its user-friendly interface and admin panel, content management is simple.  
+Its responsive design ensures a perfect appearance on both desktop and mobile devices.
 
 https://enesyilmaz.netlify.app
-## Özellikler
 
-- Sidebar ve Navbar ile kolay gezinme
-- Admin paneli ile içerik ekleme, düzenleme ve silme
-- Firebase ile kullanıcı kimlik doğrulama
-- Tailwind CSS ile hızlı ve modern tasarım
-- Vue.js ile hızlı ve dinamik frontend
+## Features
 
-## Kurulum
+- Easy navigation with Sidebar and Navbar
+- Add, edit, and delete content via the admin panel
+- User authentication with Firebase
+- Fast and modern design with Tailwind CSS
+- Fast and dynamic frontend with Vue.js
 
--Depoyu klonlayın:  
+## Installation
+
+- Clone the repository:  
  git clone https://github.com/enssyilmz/portfolio.git
 
--Proje dizinine gidin:
-cd meyblog
+- Go to the project directory:  
+ cd meyblog
 
--(.env) adında bir dosya oluşturun ve içine Firebase projenize ait aşağıdaki anahtarları yazın (değerleri Firebase Console üzerinden alın):
-- VITE_FIREBASE_API_KEY=
-- VITE_FIREBASE_APP_ID=
-- VITE_FIREBASE_AUTH_DOMAIN=
-- VITE_FIREBASE_MEASUREMENT_ID=
-- VITE_FIREBASE_MESSAGING_SENDER_ID=
-- VITE_FIREBASE_PROJECT_ID=
-- VITE_FIREBASE_STORAGE_BUCKET=
+- Create a file named (.env) and add the following Firebase project keys (values can be obtained from the Firebase Console):  
+- VITE_FIREBASE_API_KEY=  
+- VITE_FIREBASE_APP_ID=  
+- VITE_FIREBASE_AUTH_DOMAIN=  
+- VITE_FIREBASE_MEASUREMENT_ID=  
+- VITE_FIREBASE_MESSAGING_SENDER_ID=  
+- VITE_FIREBASE_PROJECT_ID=  
+- VITE_FIREBASE_STORAGE_BUCKET=  
 
+- Install dependencies:  
+ npm install
 
--Bağımlılıkları yükleyin:
-npm install
+- Start the project:  
+ npm run dev
 
--Projeyi başlatın:
-npm run dev
+## Usage
 
-## Kullanım
+Navigate the homepage using the sidebar and navbar.
 
-Ana sayfa, sidebar ve navbar ile gezinin.
+Use the /login page to log in.
 
-Giriş yapmak için /login sayfasını kullanın.
+After logging into the admin panel, manage your content.
 
-Admin paneline giriş yaptıktan sonra içeriklerinizi yönetin.
-
-## Teknolojiler
+## Technologies
 
 Vue.js 3
 
@@ -55,11 +55,11 @@ Tailwind CSS 4
 
 Vite
 
-## Lisans
+## License
 
-Bu proje MIT Lisansı ile lisanslanmıştır. Daha fazla bilgi için LICENSE dosyasına bakınız.
+This project is licensed under the MIT License. For more information, see the LICENSE file.
 
-## İletişim
+## Contact
 
-Muhammed Enes Yılmaz
+Muhammed Enes Yılmaz  
 enssyilmzx@gmail.com
