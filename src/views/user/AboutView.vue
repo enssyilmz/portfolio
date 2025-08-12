@@ -1,5 +1,6 @@
 <template>
   <section
+    v-if="aboutInfo"
     id="hakkimda"
     class="min-h-screen flex flex-col justify-center items-start gap-4"
   >
