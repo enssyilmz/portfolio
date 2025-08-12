@@ -8,7 +8,7 @@
       <h2
         ref="mainTitle"
         :class="[
-          'text-5xl font-bold transition-all duration-1000 ease-out',
+          'text-3xl md:text-5xl font-bold transition-all duration-1000 ease-out',
           mainTitleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10',
         ]"
       >

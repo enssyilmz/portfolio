@@ -1,8 +1,8 @@
 <template>
   <section id="iletisim" class="min-h-screen flex flex-col justify-center gap-6 px-4 py-8">
-    <h1 class="text-3xl font-bold">İletişim Bölümünü Düzenle</h1>
+    <h1 class="text-3xl md:text-5xl font-bold">İletişim Bölümünü Düzenle</h1>
 
-    <div v-if="messages.length === 0" class="text-paynes-gray text-center">
+    <div v-if="messages.length === 0" class="text-base md:text-lg text-paynes-gray text-center">
       Henüz mesaj gönderilmemiş.
     </div>
 
@@ -10,11 +10,11 @@
       <table class="min-w-full table-auto">
         <thead>
           <tr class="bg-cocoa-brown text-white text-sm md:text-base">
-            <th class="p-3 text-left whitespace-nowrap">Ad Soyad</th>
-            <th class="p-3 text-left whitespace-nowrap">E-posta</th>
-            <th class="p-3 text-left whitespace-nowrap">Konu</th>
-            <th class="p-3 text-left whitespace-nowrap">Mesaj</th>
-            <th class="p-3 text-left whitespace-nowrap">Tarih</th>
+            <th class="p-3 text-left whitespace-nowrap text-sm md:text-base">Ad Soyad</th>
+            <th class="p-3 text-left whitespace-nowrap text-sm md:text-base">E-posta</th>
+            <th class="p-3 text-left whitespace-nowrap text-sm md:text-base">Konu</th>
+            <th class="p-3 text-left whitespace-nowrap text-sm md:text-base">Mesaj</th>
+            <th class="p-3 text-left whitespace-nowrap text-sm md:text-base">Tarih</th>
           </tr>
         </thead>
         <tbody>

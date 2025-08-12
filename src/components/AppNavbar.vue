@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="fixed top-0 left-0 right-0 bg-cocoa-brown px-4 py-3 flex items-center justify-between z-50 shadow-md lg:hidden"
+    class="fixed top-0 left-0 right-0 bg-cocoa-brown px-4 py-3 flex items-center justify-between z-50 shadow-md md:hidden text-sm"
   >
     <div class="ml-auto">
       <button

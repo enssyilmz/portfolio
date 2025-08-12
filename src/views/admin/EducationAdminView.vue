@@ -5,10 +5,10 @@
       :message="'Eğitim Hayatım Bölümü Güncellendi!'"
       :duration="3000"
     />
-    <h1 class="text-3xl font-bold">Eğitim Hayatım Bölümünü Düzenle</h1>
-    <h2 class="text-xl font-bold mt-4">İlk Üniversite</h2>
+    <h1 class="text-3xl md:text-5xl font-bold">Eğitim Hayatım Bölümünü Düzenle</h1>
+    <h2 class="text-xl md:text-2xl font-bold mt-4">İlk Üniversite</h2>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 border p-4 rounded-lg bg-white shadow">
-      <label for="firstUniversity">Üniversite Adı</label>
+      <label for="firstUniversity" class="text-sm md:text-base font-medium">Üniversite Adı</label>
       <input
         id="firstUniversity"
         v-model="educationInfo.firstUniversity"
@@ -16,7 +16,7 @@
         placeholder="Üniversite Adı"
       />
 
-      <label for="firstUniversityDate">Üniversite Tarihi</label>
+      <label for="firstUniversityDate" class="text-sm md:text-base font-medium">Üniversite Tarihi</label>
       <input
         id="firstUniversityDate"
         v-model="educationInfo.firstUniversityDate"
@@ -26,7 +26,7 @@
     </div>
 
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 border p-4 rounded-lg bg-white shadow">
-      <label for="firstUniversityDegree">Diploma Türü</label>
+      <label for="firstUniversityDegree" class="text-sm md:text-base font-medium">Diploma Türü</label>
       <input
         id="firstUniversityDegree"
         v-model="educationInfo.firstUniversityDegree"
@@ -34,7 +34,7 @@
         placeholder="Diploma Türü"
       />
 
-      <label for="firstUniversityDepartment">Üniversite Bölüm</label>
+      <label for="firstUniversityDepartment" class="text-sm md:text-base font-medium">Üniversite Bölüm</label>
       <input
         id="firstUniversityDepartment"
         v-model="educationInfo.firstUniversityDepartment"
@@ -42,9 +42,9 @@
         placeholder="Üniversite Bölüm"
       />
     </div>
-    <h2 class="text-xl font-bold mt-4">İkinci Üniversite</h2>
+    <h2 class="text-xl md:text-2xl font-bold mt-4">İkinci Üniversite</h2>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 border p-4 rounded-lg bg-white shadow">
-      <label for="secondUniversity">Üniversite Adı</label>
+      <label for="secondUniversity" class="text-sm md:text-base font-medium">Üniversite Adı</label>
       <input
         id="secondUniversity"
         v-model="educationInfo.secondUniversity"
@@ -52,7 +52,7 @@
         placeholder="Üniversite Adı"
       />
 
-      <label for="secondUniversityDate">Üniversite Tarihi</label>
+      <label for="secondUniversityDate" class="text-sm md:text-base font-medium">Üniversite Tarihi</label>
       <input
         id="secondUniversityDate"
         v-model="educationInfo.secondUniversityDate"
@@ -62,7 +62,7 @@
     </div>
 
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 border p-4 rounded-lg bg-white shadow">
-      <label for="secondUniversityDegree">Diploma Türü</label>
+      <label for="secondUniversityDegree" class="text-sm md:text-base font-medium">Diploma Türü</label>
       <input
         id="secondUniversityDegree"
         v-model="educationInfo.secondUniversityDegree"
@@ -70,7 +70,7 @@
         placeholder="Diploma Türü"
       />
 
-      <label for="secondUniversityDepartment">Üniversite Bölüm</label>
+      <label for="secondUniversityDepartment" class="text-sm md:text-base font-medium">Üniversite Bölüm</label>
       <input
         id="secondUniversityDepartment"
         v-model="educationInfo.secondUniversityDepartment"

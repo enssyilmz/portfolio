@@ -1,23 +1,28 @@
 <template>
   <section
-    v-if="aboutInfo"
     id="hakkimda"
     class="min-h-screen flex flex-col justify-center items-start gap-4"
   >
-    <h1
-      ref="nameAndSurname"
-      :class="[
-        'text-5xl font-bold transition-all duration-1000 ease-out ',
-        nameAndSurnameVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10',
-      ]"
-    >
-      <span class="text-gray-700">{{ aboutInfo?.name + ' ' }}</span>
-      <span>{{ aboutInfo?.surname }}</span>
-    </h1>
+    <div v-if="!aboutInfo" class="flex flex-col items-center justify-center">
+      <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-web"></div>
+      <p class="mt-4 text-lg text-gray-600">Veriler yükleniyor...</p>
+    </div>
+
+    <div v-else>
+      <h1
+        ref="nameAndSurname"
+        :class="[
+          'text-3xl md:text-5xl font-bold transition-all duration-1000 ease-out ',
+          nameAndSurnameVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10',
+        ]"
+      >
+        <span class="text-gray-700">{{ aboutInfo?.name + ' ' }}</span>
+        <span>{{ aboutInfo?.surname }}</span>
+      </h1>
     <h1
       ref="mailAndLocation"
       :class="[
-        'text-xl font-semibold transition-all duration-1000 ease-out delay-200',
+        'text-lg md:text-xl font-semibold transition-all duration-1000 ease-out delay-200',
         mailAndLocationVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10',
       ]"
     >
@@ -28,7 +33,7 @@
     <p
       ref="description"
       :class="[
-        'text-lg text-gray-600 transition-all duration-1000 ease-out delay-400',
+        'text-base md:text-lg text-gray-600 transition-all duration-1000 ease-out delay-400',
         descriptionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10',
       ]"
     >
@@ -44,45 +49,46 @@
       <a
         :href="socialLinks?.github"
         target="_blank"
-        class="text-gray-600 hover:text-black transition-colors duration-300 text-5xl"
+        class="text-gray-600 hover:text-black transition-colors duration-300 text-3xl md:text-5xl"
       >
         <font-awesome-icon :icon="['fab', 'github']" />
       </a>
       <a
         :href="socialLinks?.linkedin"
         target="_blank"
-        class="text-gray-600 hover:text-blue-600 transition-colors duration-300 text-5xl"
+        class="text-gray-600 hover:text-blue-600 transition-colors duration-300 text-3xl md:text-5xl"
       >
         <font-awesome-icon :icon="['fab', 'linkedin']" />
       </a>
       <a
         :href="socialLinks?.twitter"
         target="_blank"
-        class="text-gray-600 hover:text-black transition-colors duration-300 text-5xl"
+        class="text-gray-600 hover:text-black transition-colors duration-300 text-3xl md:text-5xl"
       >
         <font-awesome-icon :icon="['fab', 'x-twitter']" />
       </a>
       <a
         :href="socialLinks?.instagram"
         target="_blank"
-        class="text-gray-600 hover:text-pink-500 transition-colors duration-300 text-5xl"
+        class="text-gray-600 hover:text-pink-500 transition-colors duration-300 text-3xl md:text-5xl"
       >
         <font-awesome-icon :icon="['fab', 'instagram']" />
       </a>
       <a
         :href="socialLinks?.facebook"
         target="_blank"
-        class="text-gray-600 hover:text-blue-700 transition-colors duration-300 text-5xl"
+        class="text-gray-600 hover:text-blue-700 transition-colors duration-300 text-3xl md:text-5xl"
       >
         <font-awesome-icon :icon="['fab', 'facebook']" />
       </a>
       <a
         :href="socialLinks?.youtube"
         target="_blank"
-        class="text-gray-600 hover:text-red-600 transition-colors duration-300 text-5xl"
+        class="text-gray-600 hover:text-red-600 transition-colors duration-300 text-3xl md:text-5xl"
       >
         <font-awesome-icon :icon="['fab', 'youtube']" />
       </a>
+    </div>
     </div>
   </section>
 </template>

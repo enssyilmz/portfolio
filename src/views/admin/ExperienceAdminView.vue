@@ -1,10 +1,10 @@
 <template>
   <section id="deneyimler" class="min-h-screen flex flex-col justify-center gap-4">
     <BasePopup v-model="showPopup" :message="'Deneyimler Bölümü Güncellendi!'" :duration="3000" />
-    <h1 class="text-3xl font-bold">Deneyimler Bölümünü Düzenle</h1>
-    <h2 class="text-xl font-bold mt-4">İlk Şirket</h2>
+    <h1 class="text-3xl md:text-5xl font-bold">Deneyimler Bölümünü Düzenle</h1>
+    <h2 class="text-xl md:text-2xl font-bold mt-4">İlk Şirket</h2>
     <div class="grid grid-cols-2 md:grid-cols-6 gap-4 border p-4 rounded-lg bg-white shadow">
-      <label for="firstCompany">Şirket Adı</label>
+      <label for="firstCompany" class="text-sm md:text-base font-medium">Şirket Adı</label>
       <input
         id="firstCompany"
         v-model="experienceInfo.firstCompany"
@@ -12,7 +12,7 @@
         placeholder="Şirket Adı"
       />
 
-      <label for="firstCompanyDate">Şirket Tarihi</label>
+      <label for="firstCompanyDate" class="text-sm md:text-base font-medium">Şirket Tarihi</label>
       <input
         id="firstCompanyDate"
         v-model="experienceInfo.firstCompanyDate"
@@ -20,7 +20,7 @@
         placeholder="Şirket Tarihi"
       />
 
-      <label for="firstCompanyType">Pozisyon</label>
+      <label for="firstCompanyType" class="text-sm md:text-base font-medium">Pozisyon</label>
       <input
         id="firstCompanyType"
         v-model="experienceInfo.firstCompanyType"
@@ -30,7 +30,7 @@
     </div>
 
     <div class="grid grid-cols-1 gap-4 border p-4 rounded-lg bg-white shadow">
-      <label for="firstCompanyDescription">Açıklama</label>
+      <label for="firstCompanyDescription" class="text-sm md:text-base font-medium">Açıklama</label>
       <textarea
         id="firstCompanyDescription"
         v-model="experienceInfo.firstCompanyDescription"
@@ -38,9 +38,9 @@
         placeholder="Açıklama"
       ></textarea>
     </div>
-    <h2 class="text-xl font-bold mt-4">İkinci Şirket</h2>
+    <h2 class="text-xl md:text-2xl font-bold mt-4">İkinci Şirket</h2>
     <div class="grid grid-cols-2 md:grid-cols-6 gap-4 border p-4 rounded-lg bg-white shadow">
-      <label for="secondCompany">Şirket Adı</label>
+      <label for="secondCompany" class="text-sm md:text-base font-medium">Şirket Adı</label>
       <input
         id="secondCompany"
         v-model="experienceInfo.secondCompany"
@@ -48,7 +48,7 @@
         placeholder="Şirket Adı"
       />
 
-      <label for="secondCompanyDate">Şirket Tarihi</label>
+      <label for="secondCompanyDate" class="text-sm md:text-base font-medium">Şirket Tarihi</label>
       <input
         id="secondCompanyDate"
         v-model="experienceInfo.secondCompanyDate"
@@ -56,7 +56,7 @@
         placeholder="Şirket Tarihi"
       />
 
-      <label for="secondCompanyType">Pozisyon</label>
+      <label for="secondCompanyType" class="text-sm md:text-base font-medium">Pozisyon</label>
       <input
         id="secondCompanyType"
         v-model="experienceInfo.secondCompanyType"
@@ -66,7 +66,7 @@
     </div>
 
     <div class="grid grid-cols-1 gap-4 border p-4 rounded-lg bg-white shadow">
-      <label for="secondCompanyDescription">Açıklama</label>
+      <label for="secondCompanyDescription" class="text-sm md:text-base font-medium">Açıklama</label>
       <textarea
         id="secondCompanyDescription"
         v-model="experienceInfo.secondCompanyDescription"

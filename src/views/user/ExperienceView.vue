@@ -1,18 +1,23 @@
 <template>
   <section
-    v-if="experienceInfo"
     id="deneyimler"
     class="min-h-screen flex flex-col justify-center items-start gap-4 overflow-x-hidden"
   >
-    <h1
-      ref="mainTitle"
-      :class="[
-        'text-5xl font-bold transition-all duration-1000 ease-out',
-        mainTitleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10',
-      ]"
-    >
-      DENEYİMLERİM
-    </h1>
+    <div v-if="!experienceInfo" class="flex flex-col items-center justify-center">
+      <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-web"></div>
+      <p class="mt-4 text-lg text-gray-600">Deneyimler yükleniyor...</p>
+    </div>
+
+    <div v-else class="w-full">
+      <h1
+        ref="mainTitle"
+        :class="[
+          'text-3xl md:text-5xl font-bold transition-all duration-1000 ease-out',
+          mainTitleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10',
+        ]"
+      >
+        DENEYİMLERİM
+      </h1>
     <br />
     <div
       ref="firstExperience"
@@ -21,14 +26,14 @@
         firstExpVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10',
       ]"
     >
-      <div class="flex justify-between items-center">
-        <h1 class="text-xl font-semibold text-gray-800">
+      <div class="flex justify-between items-center w-full">
+        <h1 class="text-lg md:text-xl font-semibold text-gray-800">
           {{ experienceInfo?.firstCompany }}
         </h1>
-        <span class="text-sm">{{ experienceInfo?.firstCompanyDate }}</span>
+        <span class="text-xs md:text-sm">{{ experienceInfo?.firstCompanyDate }}</span>
       </div>
-      <h2 class="text-xl font-semibold text-gray-500">{{ experienceInfo?.firstCompanyType }}</h2>
-      <p class="text-lg text-gray-600">
+      <h2 class="text-lg md:text-xl font-semibold text-gray-500">{{ experienceInfo?.firstCompanyType }}</h2>
+      <p class="text-base md:text-lg text-gray-600">
         {{ experienceInfo?.firstCompanyDescription }}
       </p>
     </div>
@@ -41,13 +46,14 @@
       ]"
     >
       <div class="flex justify-between items-center">
-        <h1 class="text-xl font-semibold text-gray-800">{{ experienceInfo?.secondCompany }}</h1>
-        <span class="text-sm">{{ experienceInfo?.secondCompanyDate }}</span>
+        <h1 class="text-lg md:text-xl font-semibold text-gray-800">{{ experienceInfo?.secondCompany }}</h1>
+        <span class="text-xs md:text-sm">{{ experienceInfo?.secondCompanyDate }}</span>
       </div>
-      <h2 class="text-xl font-semibold text-gray-500">{{ experienceInfo?.secondCompanyType }}</h2>
-      <p class="text-lg text-gray-600">
+      <h2 class="text-lg md:text-xl font-semibold text-gray-500">{{ experienceInfo?.secondCompanyType }}</h2>
+      <p class="text-base md:text-lg text-gray-600">
         {{ experienceInfo?.secondCompanyDescription }}
       </p>
+    </div>
     </div>
   </section>
 </template>

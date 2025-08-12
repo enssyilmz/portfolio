@@ -1,18 +1,23 @@
 <template>
   <section
-    v-if="skillsList"
     id="beceriler"
     class="min-h-screen flex flex-col justify-center gap-4 overflow-x-hidden"
   >
-    <h1
-      ref="mainTitle"
-      :class="[
-        'text-5xl font-bold mb-6 transition-all duration-1000 ease-out',
-        mainTitleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10',
-      ]"
-    >
-      BECERİLERİM
-    </h1>
+    <div v-if="!skillsList" class="flex flex-col items-center justify-center">
+      <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-web"></div>
+      <p class="mt-4 text-lg text-gray-600">Beceriler yükleniyor...</p>
+    </div>
+
+    <div v-else class="w-full">
+      <h1
+        ref="mainTitle"
+        :class="[
+          'text-3xl md:text-5xl font-bold mb-6 transition-all duration-1000 ease-out',
+          mainTitleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10',
+        ]"
+      >
+        BECERİLERİM
+      </h1>
 
     <div class="grid md:grid-cols-3 gap-8">
       <div
@@ -22,7 +27,7 @@
           firstFieldVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10',
         ]"
       >
-        <h2 class="text-2xl mb-3 font-semibold text-gray-800">Programlama Dilleri</h2>
+        <h2 class="text-xl md:text-2xl mb-3 font-semibold text-gray-800">Programlama Dilleri</h2>
         <ul class="list-disc list-inside font-semibold text-paynes-gray space-y-1">
           <li v-for="(lang, i) in skillsList?.programmingLanguages" :key="i">{{ lang }}</li>
         </ul>
@@ -35,7 +40,7 @@
           secondFieldVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-y-10',
         ]"
       >
-        <h2 class="text-2xl font-semibold mb-3 text-gray-800">Web Geliştirme</h2>
+        <h2 class="text-xl md:text-2xl font-semibold mb-3 text-gray-800">Web Geliştirme</h2>
         <ul class="list-disc list-inside font-semibold text-paynes-gray space-y-1">
           <li v-for="(lang, i) in skillsList?.webDevelopment" :key="i">{{ lang }}</li>
         </ul>
@@ -48,11 +53,12 @@
           thirdFieldVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10',
         ]"
       >
-        <h2 class="text-2xl font-semibold mb-3 text-gray-800">Backend & Veritabanı</h2>
+        <h2 class="text-xl md:text-2xl font-semibold mb-3 text-gray-800">Backend & Veritabanı</h2>
         <ul class="list-disc list-inside font-semibold text-paynes-gray space-y-1">
           <li v-for="(lang, i) in skillsList?.backendAndDatabase" :key="i">{{ lang }}</li>
         </ul>
       </div>
+    </div>
     </div>
   </section>
 </template>
