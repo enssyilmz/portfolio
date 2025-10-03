@@ -4,7 +4,7 @@ MeyBlog is a personal blog platform I developed using Vue.js and Firebase.
 With its user-friendly interface and admin panel, content management is simple.  
 Its responsive design ensures a perfect appearance on both desktop and mobile devices.
 
-https://enesyilmaz.netlify.app
+https://enesyilmaz.web.app
 
 ## Features
 
