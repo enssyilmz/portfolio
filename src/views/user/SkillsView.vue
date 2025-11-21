@@ -1,7 +1,7 @@
 <template>
   <section
     id="beceriler"
-    class="min-h-screen flex flex-col justify-center gap-4 overflow-x-hidden"
+    class="min-h-screen flex flex-col justify-center items-start gap-4 overflow-x-hidden"
   >
     <div v-if="!skillsList" class="flex flex-col items-center justify-center">
       <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-web"></div>

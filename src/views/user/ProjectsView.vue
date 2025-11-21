@@ -1,7 +1,7 @@
 <template>
   <section
     id="projeler"
-    class="min-h-screen flex flex-col justify-center gap-4 overflow-x-hidden"
+    class="min-h-screen flex flex-col justify-center items-start gap-4 overflow-y-hidden overflow-x-hidden"
   >
     <div v-if="!projectsList" class="flex flex-col items-center justify-center">
       <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-web"></div>
@@ -23,7 +23,7 @@
         <div
           v-for="(project, index) in projectsList"
           :key="index"
-          ref="projectCards"
+          :ref="el => { if (el) projectCards[index] = el }"
           :class="[
             'border p-6 rounded-lg bg-white shadow-lg transition-all duration-700 ease-out',
             visibleCards[index] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10',
@@ -39,7 +39,7 @@
               <p class="text-gray-600 mb-4">{{ project.description }}</p>
 
               <div class="mb-3">
-                <span class="font-semibold">Kullanılan Teknolojiler: </span>
+                <span class="font-semibold text-orange-web">Kullanılan Teknolojiler: </span>
                 <span class="text-gray-600">{{ project.technologies }}</span>
               </div>
 
@@ -64,7 +64,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, watch } from 'vue'
 import { collection, getDocs, query, orderBy } from 'firebase/firestore'
 import { db } from '@/firebase/firebase'
 import { useIntersectionObserver } from '@vueuse/core'
@@ -75,13 +75,39 @@ const projectCards = ref([])
 const mainTitleVisible = ref(false)
 const visibleCards = ref([])
 
+// Başlık için intersection observer (her seferinde animasyon)
 useIntersectionObserver(
   mainTitle,
   ([{ isIntersecting }]) => {
     mainTitleVisible.value = isIntersecting
   },
-  { threshold: 0.5 }
+  { threshold: 0.3 }
 )
+
+// Projeler yüklendikten sonra her kart için observer ekle
+watch(projectsList, (newProjects) => {
+  if (newProjects) {
+    // Her kart için observer ekle
+    newProjects.forEach((_, index) => {
+      visibleCards.value[index] = false
+
+      // Küçük bir gecikme ile observer'ları kur
+      setTimeout(() => {
+        const card = projectCards.value[index]
+        if (card) {
+          useIntersectionObserver(
+            () => card,
+            ([{ isIntersecting }]) => {
+              // Her scroll'da animasyonu tekrarla
+              visibleCards.value[index] = isIntersecting
+            },
+            { threshold: 0.2 }
+          )
+        }
+      }, 100)
+    })
+  }
+})
 
 onMounted(async () => {
   try {
@@ -93,25 +119,6 @@ onMounted(async () => {
       id: doc.id,
       ...doc.data(),
     }))
-
-    // Her kart için intersection observer ekle
-    projectsList.value.forEach((_, index) => {
-      visibleCards.value[index] = false
-
-      setTimeout(() => {
-        if (projectCards.value[index]) {
-          useIntersectionObserver(
-            projectCards.value[index],
-            ([{ isIntersecting }]) => {
-              if (isIntersecting) {
-                visibleCards.value[index] = true
-              }
-            },
-            { threshold: 0.3 }
-          )
-        }
-      }, 100)
-    })
   } catch (error) {
     console.error('Projeler yüklenirken hata:', error)
   }
