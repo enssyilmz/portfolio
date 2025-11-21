@@ -8,27 +8,27 @@
       <h2
         ref="mainTitle"
         :class="[
-          'text-3xl md:text-5xl font-bold transition-all duration-1000 ease-out',
-          mainTitleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10',
+          'text-3xl md:text-5xl font-bold mb-8 transition-all duration-700 ease-out',
+          mainTitleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8',
         ]"
       >
         İLETİŞİM
       </h2>
-      <br />
+
       <form @submit.prevent="handleSubmit" class="space-y-6">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div
             ref="nameField"
             :class="[
-              'transition-all duration-1000 ease-out',
-              nameVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10',
+              'transition-all duration-600 ease-out delay-100',
+              nameVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4',
             ]"
           >
             <label class="font-medium">Ad</label>
             <input
               v-model="form.FirstName"
               type="text"
-              class="w-full p-2 rounded-lg border focus:outline-none"
+              class="w-full p-2 rounded-lg border focus:outline-none focus:ring-2"
               required
             />
           </div>
@@ -36,15 +36,15 @@
           <div
             ref="surnameField"
             :class="[
-              'transition-all duration-1000 ease-out',
-              surnameVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10',
+              'transition-all duration-600 ease-out delay-150',
+              surnameVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4',
             ]"
           >
             <label class="font-medium">Soyad</label>
             <input
               v-model="form.LastName"
               type="text"
-              class="w-full p-2 rounded-lg border focus:outline-none"
+              class="w-full p-2 rounded-lg border focus:outline-none focus:ring-2"
               required
             />
           </div>
@@ -53,15 +53,15 @@
         <div
           ref="emailField"
           :class="[
-            'transition-all duration-1000 ease-out',
-            emailVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10',
+            'transition-all duration-600 ease-out delay-200',
+            emailVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4',
           ]"
         >
           <label class="font-medium mb-2">E-posta</label>
           <input
             v-model="form.Email"
             type="email"
-            class="w-full p-2 rounded-lg border focus:outline-none"
+            class="w-full p-2 rounded-lg border focus:outline-none focus:ring-2"
             required
           />
         </div>
@@ -69,15 +69,15 @@
         <div
           ref="subjectField"
           :class="[
-            'transition-all duration-1000 ease-out',
-            subjectVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10',
+            'transition-all duration-600 ease-out delay-250',
+            subjectVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4',
           ]"
         >
           <label class="font-medium mb-2">Konu</label>
           <input
             v-model="form.Subject"
             type="text"
-            class="w-full p-2 rounded-lg border focus:outline-none"
+            class="w-full p-2 rounded-lg border focus:outline-none focus:ring-2"
             required
           />
         </div>
@@ -85,15 +85,15 @@
         <div
           ref="messageField"
           :class="[
-            'transition-all duration-1000 ease-out',
-            messageVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10',
+            'transition-all duration-600 ease-out delay-300',
+            messageVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4',
           ]"
         >
           <label class="font-medium mb-2">Mesaj</label>
           <textarea
             v-model="form.Message"
             rows="6"
-            class="w-full p-2 rounded-lg border focus:outline-none"
+            class="w-full p-2 rounded-lg border focus:outline-none focus:ring-2 "
             required
           ></textarea>
         </div>
@@ -102,8 +102,8 @@
           class="flex justify-center"
           ref="buttonfield"
           :class="[
-            'transition-all duration-1000 ease-out',
-            buttonfieldVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10',
+            'transition-all duration-600 ease-out delay-350',
+            buttonfieldVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4',
           ]"
         >
           <button @click="saveChanges" class="btn px-4 py-2 rounded-lg" type="submit">

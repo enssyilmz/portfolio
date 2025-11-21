@@ -19,46 +19,82 @@
         BECERİLERİM
       </h1>
 
-    <div class="grid md:grid-cols-3 gap-8">
-      <div
-        ref="firstField"
-        :class="[
-          'transition-all duration-1000 ease-out delay-200',
-          firstFieldVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10',
-        ]"
-      >
-        <h2 class="text-xl md:text-2xl mb-3 font-semibold text-gray-800">Programlama Dilleri</h2>
-        <ul class="list-disc list-inside font-semibold text-paynes-gray space-y-1">
-          <li v-for="(lang, i) in skillsList?.programmingLanguages" :key="i">{{ lang }}</li>
-        </ul>
-      </div>
+      <div class="flex flex-col gap-10">
+        <div
+          ref="firstField"
+          :class="[
+            'transition-all duration-800 ease-out border p-4 rounded-lg bg-white shadow',
+            firstFieldVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10',
+          ]"
+        >
+          <h2 class="text-xl md:text-2xl mb-4 font-semibold text-gray-800 ">
+            Programlama Dilleri
+          </h2>
+          <div class="flex flex-row flex-wrap gap-4">
+            <div
+              v-for="(skill, index) in skillsList?.programmingLanguages"
+              :key="index"
+              :class="[
+                'transition-all duration-500 ease-out',
+                firstFieldVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-75',
+              ]"
+              :style="{ transitionDelay: `${index * 80 + 200}ms` }"
+            >
+              <Icon :icon="skill.icon" class="w-14 h-14" />
+            </div>
+          </div>
+        </div>
 
-      <div
-        ref="secondField"
-        :class="[
-          'transition-all duration-1000 ease-out delay-200',
-          secondFieldVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-y-10',
-        ]"
-      >
-        <h2 class="text-xl md:text-2xl font-semibold mb-3 text-gray-800">Web Geliştirme</h2>
-        <ul class="list-disc list-inside font-semibold text-paynes-gray space-y-1">
-          <li v-for="(lang, i) in skillsList?.webDevelopment" :key="i">{{ lang }}</li>
-        </ul>
-      </div>
+        <div
+          ref="secondField"
+          :class="[
+            'transition-all duration-800 ease-out delay-100 border p-4 rounded-lg bg-white shadow',
+            secondFieldVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10',
+          ]"
+        >
+          <h2 class="text-xl md:text-2xl font-semibold mb-4 text-gray-800">
+            Web Geliştirme
+          </h2>
+          <div class="flex flex-row flex-wrap gap-4">
+            <div
+              v-for="(skill, index) in skillsList?.webDevelopment"
+              :key="index"
+              :class="[
+                'transition-all duration-500 ease-out',
+                secondFieldVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-75',
+              ]"
+              :style="{ transitionDelay: `${index * 80 + 200}ms` }"
+            >
+              <Icon :icon="skill.icon" class="w-14 h-14" />
+            </div>
+          </div>
+        </div>
 
-      <div
-        ref="thirdField"
-        :class="[
-          'transition-all duration-1000 ease-out delay-200',
-          thirdFieldVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10',
-        ]"
-      >
-        <h2 class="text-xl md:text-2xl font-semibold mb-3 text-gray-800">Backend & Veritabanı</h2>
-        <ul class="list-disc list-inside font-semibold text-paynes-gray space-y-1">
-          <li v-for="(lang, i) in skillsList?.backendAndDatabase" :key="i">{{ lang }}</li>
-        </ul>
+        <div
+          ref="thirdField"
+          :class="[
+            'transition-all duration-800 ease-out delay-200 border p-4 rounded-lg bg-white shadow',
+            thirdFieldVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10',
+          ]"
+        >
+          <h2 class="text-xl md:text-2xl font-semibold mb-4 text-gray-800">
+            Backend & Veritabanı
+          </h2>
+          <div class="flex flex-row flex-wrap gap-4">
+            <div
+              v-for="(skill, index) in skillsList?.backendAndDatabase"
+              :key="index"
+              :class="[
+                'transition-all duration-500 ease-out',
+                thirdFieldVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-75',
+              ]"
+              :style="{ transitionDelay: `${index * 80 + 200}ms` }"
+            >
+              <Icon :icon="skill.icon" class="w-14 h-14" />
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
     </div>
   </section>
 </template>
@@ -67,6 +103,7 @@ import { doc, getDoc } from 'firebase/firestore'
 import { db } from '@/firebase/firebase'
 import { ref, onMounted } from 'vue'
 import { useIntersectionObserver } from '@vueuse/core'
+import { Icon } from '@iconify/vue'
 
 const skillsList = ref(null)
 

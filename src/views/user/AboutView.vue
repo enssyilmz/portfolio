@@ -12,7 +12,7 @@
       <h1
         ref="nameAndSurname"
         :class="[
-          'text-3xl md:text-5xl font-bold transition-all duration-1000 ease-out ',
+          'text-3xl md:text-5xl font-bold transition-all duration-1000 ease-out',
           nameAndSurnameVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10',
         ]"
       >
@@ -33,7 +33,7 @@
     <p
       ref="description"
       :class="[
-        'text-base md:text-lg text-gray-600 transition-all duration-1000 ease-out delay-400',
+        'text-base md:text-lg text-gray-600 transition-all duration-1000 ease-out delay-400 border p-4 rounded-lg bg-white shadow',
         descriptionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10',
       ]"
     >
@@ -42,7 +42,7 @@
     <div
       ref="socialLink"
       :class="[
-        'flex gap-4 mt-4 transition-all duration-1000 ease-out delay-400',
+        'flex gap-4 mt-4 transition-all duration-1000 ease-out delay-400 border p-4 rounded-lg bg-white shadow',
         socialLinkVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10',
       ]"
     >

@@ -22,11 +22,11 @@
     <div
       ref="firstEducation"
       :class="[
-        'w-full transition-all duration-1000 ease-out delay-200',
+        'w-full transition-all duration-1000 ease-out delay-200 border p-4 rounded-lg bg-white shadow',
         firstEduVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10',
       ]"
     >
-      <div class="flex items-center justify-between w-full">
+      <div class="flex items-center justify-between w-full ">
         <h1 class="text-lg md:text-xl font-semibold text-gray-800">{{ educationInfo?.firstUniversity }}</h1>
         <span class="text-xs md:text-sm">{{ educationInfo?.firstUniversityDate }}</span>
       </div>
@@ -39,7 +39,7 @@
     <div
       ref="secondEducation"
       :class="[
-        'w-full transition-all duration-1000 ease-out delay-400',
+        'w-full transition-all duration-1000 ease-out delay-400 border p-4 rounded-lg bg-white shadow',
         secondEduVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10',
       ]"
     >

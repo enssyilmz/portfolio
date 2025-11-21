@@ -22,7 +22,7 @@
     <div
       ref="firstExperience"
       :class="[
-        'flex flex-col gap-2 transition-all duration-1000 ease-out delay-200',
+        'flex flex-col gap-2 transition-all duration-1000 ease-out delay-200 border p-4 rounded-lg bg-white shadow',
         firstExpVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10',
       ]"
     >
@@ -41,7 +41,7 @@
     <div
       ref="secondExperience"
       :class="[
-        'flex flex-col gap-2 transition-all duration-1000 ease-out delay-400',
+        'flex flex-col gap-2 transition-all duration-1000 ease-out delay-400 border p-4 rounded-lg bg-white shadow',
         secondExpVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10',
       ]"
     >
