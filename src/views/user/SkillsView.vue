@@ -94,6 +94,31 @@
             </div>
           </div>
         </div>
+
+        <div
+          ref="fourthField"
+          :class="[
+            'transition-all duration-800 ease-out delay-300 border p-4 rounded-lg bg-white shadow',
+            fourthFieldVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10',
+          ]"
+        >
+          <h2 class="text-xl md:text-2xl font-semibold mb-4 text-gray-800">
+            DevOps & Tools
+          </h2>
+          <div class="flex flex-row flex-wrap gap-4">
+            <div
+              v-for="(skill, index) in skillsList?.devopsAndTools"
+              :key="index"
+              :class="[
+                'transition-all duration-500 ease-out',
+                fourthFieldVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-75',
+              ]"
+              :style="{ transitionDelay: `${index * 80 + 200}ms` }"
+            >
+              <Icon :icon="skill.icon" class="w-14 h-14" />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -111,11 +136,13 @@ const mainTitle = ref(false)
 const firstField = ref(false)
 const secondField = ref(false)
 const thirdField = ref(false)
+const fourthField = ref(false)
 
 const mainTitleVisible = ref(false)
 const firstFieldVisible = ref(false)
 const secondFieldVisible = ref(false)
 const thirdFieldVisible = ref(false)
+const fourthFieldVisible = ref(false)
 
 useIntersectionObserver(
   mainTitle,
@@ -142,6 +169,13 @@ useIntersectionObserver(
   thirdField,
   ([{ isIntersecting }]) => {
     thirdFieldVisible.value = isIntersecting
+  },
+  { threshold: 0.5 },
+)
+useIntersectionObserver(
+  fourthField,
+  ([{ isIntersecting }]) => {
+    fourthFieldVisible.value = isIntersecting
   },
   { threshold: 0.5 },
 )

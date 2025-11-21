@@ -7,6 +7,8 @@
       <hr class="my-12 border-t-2 border-gray-300" />
       <ExperienceAdminView />
       <hr class="my-12 border-t-2 border-gray-300" />
+      <ProjectsAdminView />
+      <hr class="my-12 border-t-2 border-gray-300" />
       <EducationAdminView />
       <hr class="my-12 border-t-2 border-gray-300" />
       <SkillsAdminView />
@@ -23,12 +25,14 @@ import AppNavbar from '@/components/AppNavbar.vue'
 import AboutAdminView from './admin/AboutAdminView.vue'
 import ExperienceAdminView from './admin/ExperienceAdminView.vue'
 import EducationAdminView from './admin/EducationAdminView.vue'
+import ProjectsAdminView from './admin/ProjectsAdminView.vue'
 import SkillsAdminView from './admin/SkillsAdminView.vue'
 import ContactAdminView from './admin/ContactAdminView.vue'
 
 const adminSections = [
   { id: 'hakkimda', name: 'HAKKIMDAYI DÜZENLE' },
   { id: 'deneyimler', name: 'DENEYİMLERİ DÜZENLE' },
+  { id: 'projeler', name: 'PROJELERİ DÜZENLE' },
   { id: 'egitim', name: 'EĞİTİM HAYATINI DÜZENLE' },
   { id: 'beceriler', name: 'BECERİLERİNİ DÜZENLE' },
   { id: 'iletisim', name: 'İLETİŞİM DÜZENLE' },

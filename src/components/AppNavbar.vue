@@ -90,6 +90,7 @@ const props = defineProps({
     default: () => [
       { id: 'hakkimda', name: 'HAKKIMDA' },
       { id: 'deneyimler', name: 'DENEYİMLER' },
+      { id: 'projeler', name: 'PROJELER' },
       { id: 'egitim', name: 'EĞİTİM HAYATIM' },
       { id: 'beceriler', name: 'BECERİLERİM' },
       { id: 'iletisim', name: 'İLETİŞİM' },
