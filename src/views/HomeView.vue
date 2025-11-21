@@ -7,6 +7,8 @@
       <hr class="my-12 border-t-2 border-gray-300" />
       <ExperienceView />
       <hr class="my-12 border-t-2 border-gray-300" />
+      <ProjectsView />
+      <hr class="my-12 border-t-2 border-gray-300" />
       <EducationView />
       <hr class="my-12 border-t-2 border-gray-300" />
       <SkillsView />
@@ -22,6 +24,7 @@ import AppNavbar from '@/components/AppNavbar.vue'
 import AboutView from './user/AboutView.vue'
 import ExperienceView from './user/ExperienceView.vue'
 import EducationView from './user/EducationView.vue'
+import ProjectsView from './user/ProjectsView.vue'
 import ContactView from './user/ContactView.vue'
 import SkillsView from './user/SkillsView.vue'
 </script>

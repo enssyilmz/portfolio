@@ -15,7 +15,7 @@
         İLETİŞİM
       </h2>
 
-      <form @submit.prevent="handleSubmit" class="space-y-6">
+      <form @submit.prevent="handleSubmit" class="space-y-6 border p-4 rounded-lg bg-white shadow">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div
             ref="nameField"
@@ -28,7 +28,7 @@
             <input
               v-model="form.FirstName"
               type="text"
-              class="w-full p-2 rounded-lg border focus:outline-none focus:ring-2"
+              class="w-full p-2 rounded-lg border-b focus:outline-none focus:ring-2"
               required
             />
           </div>
@@ -44,7 +44,7 @@
             <input
               v-model="form.LastName"
               type="text"
-              class="w-full p-2 rounded-lg border focus:outline-none focus:ring-2"
+              class="w-full p-2 rounded-lg border-b focus:outline-none focus:ring-2"
               required
             />
           </div>
@@ -61,7 +61,7 @@
           <input
             v-model="form.Email"
             type="email"
-            class="w-full p-2 rounded-lg border focus:outline-none focus:ring-2"
+            class="w-full p-2 rounded-lg border-b focus:outline-none focus:ring-2"
             required
           />
         </div>
@@ -77,7 +77,7 @@
           <input
             v-model="form.Subject"
             type="text"
-            class="w-full p-2 rounded-lg border focus:outline-none focus:ring-2"
+            class="w-full p-2 rounded-lg border-b focus:outline-none focus:ring-2"
             required
           />
         </div>
@@ -93,7 +93,7 @@
           <textarea
             v-model="form.Message"
             rows="6"
-            class="w-full p-2 rounded-lg border focus:outline-none focus:ring-2 "
+            class="w-full p-2 rounded-lg border-b focus:outline-none focus:ring-2 "
             required
           ></textarea>
         </div>
