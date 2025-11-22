@@ -11,7 +11,7 @@
       <h1
         ref="nameAndSurname"
         :class="[
-          'text-3xl md:text-5xl font-bold transition-all duration-1000 ease-out',
+          'text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold transition-all duration-1000 ease-out',
           nameAndSurnameVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10',
         ]"
       >
@@ -21,7 +21,7 @@
     <h1
       ref="mailAndLocation"
       :class="[
-        'text-lg md:text-xl font-semibold transition-all duration-1000 ease-out delay-200',
+        'text-sm sm:text-base md:text-lg lg:text-xl font-semibold transition-all duration-1000 ease-out delay-200',
         mailAndLocationVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10',
       ]"
     >
@@ -32,7 +32,7 @@
     <p
       ref="description"
       :class="[
-        'text-base md:text-lg text-gray-600 transition-all duration-1000 ease-out delay-400 border p-4 rounded-lg bg-white shadow',
+        'text-sm sm:text-base md:text-base lg:text-lg text-gray-600 transition-all duration-1000 ease-out delay-400 border p-4 rounded-lg bg-white shadow',
         descriptionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10',
       ]"
     >
@@ -48,42 +48,42 @@
       <a
         :href="socialLinks?.github"
         target="_blank"
-        class="text-gray-600 hover:text-black transition-colors duration-300 text-3xl md:text-5xl"
+        class="text-gray-600 hover:text-black transition-colors duration-300 text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
       >
         <font-awesome-icon :icon="['fab', 'github']" />
       </a>
       <a
         :href="socialLinks?.linkedin"
         target="_blank"
-        class="text-gray-600 hover:text-blue-600 transition-colors duration-300 text-3xl md:text-5xl"
+        class="text-gray-600 hover:text-blue-600 transition-colors duration-300 text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
       >
         <font-awesome-icon :icon="['fab', 'linkedin']" />
       </a>
       <a
         :href="socialLinks?.twitter"
         target="_blank"
-        class="text-gray-600 hover:text-black transition-colors duration-300 text-3xl md:text-5xl"
+        class="text-gray-600 hover:text-black transition-colors duration-300 text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
       >
         <font-awesome-icon :icon="['fab', 'x-twitter']" />
       </a>
       <a
         :href="socialLinks?.instagram"
         target="_blank"
-        class="text-gray-600 hover:text-pink-500 transition-colors duration-300 text-3xl md:text-5xl"
+        class="text-gray-600 hover:text-pink-500 transition-colors duration-300 text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
       >
         <font-awesome-icon :icon="['fab', 'instagram']" />
       </a>
       <a
         :href="socialLinks?.facebook"
         target="_blank"
-        class="text-gray-600 hover:text-blue-700 transition-colors duration-300 text-3xl md:text-5xl"
+        class="text-gray-600 hover:text-blue-700 transition-colors duration-300 text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
       >
         <font-awesome-icon :icon="['fab', 'facebook']" />
       </a>
       <a
         :href="socialLinks?.youtube"
         target="_blank"
-        class="text-gray-600 hover:text-red-600 transition-colors duration-300 text-3xl md:text-5xl"
+        class="text-gray-600 hover:text-red-600 transition-colors duration-300 text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
       >
         <font-awesome-icon :icon="['fab', 'youtube']" />
       </a>

@@ -1,7 +1,7 @@
 <template>
   <section id="projeler" class="min-h-screen flex flex-col justify-center gap-6 p-4">
     <BasePopup v-model="showPopup" :message="popupMessage" :duration="3000" />
-    <h1 class="text-3xl md:text-5xl font-bold ">Projeler Bölümünü Düzenle</h1>
+    <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold ">Projeler Bölümünü Düzenle</h1>
 
     <div class="space-y-6">
       <!-- Her Proje -->
@@ -11,10 +11,10 @@
         class="border p-6 rounded-lg bg-white shadow-lg"
       >
         <div class="flex justify-between items-center mb-4">
-          <h2 class="text-xl font-semibold">Proje {{ index + 1 }}</h2>
+          <h2 class="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold">Proje {{ index + 1 }}</h2>
           <button
             @click="removeProject(index)"
-            class="px-4 py-2 bg-red-500 hover:bg-red-600"
+            class="px-3 py-2 sm:px-4 sm:py-2 md:px-4 md:py-2 lg:px-4 lg:py-2 bg-red-500 hover:bg-red-600 text-xs sm:text-sm md:text-sm lg:text-base"
           >
             Sil
           </button>
@@ -23,53 +23,53 @@
         <div class="space-y-4">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label class="block text-sm font-medium mb-2">Proje Adı</label>
+              <label class="block text-xs sm:text-sm md:text-sm lg:text-base font-medium mb-2">Proje Adı</label>
               <input
                 v-model="project.title"
                 type="text"
                 placeholder="Örn: Forever Elite"
-                class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-orange-web"
+                class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-orange-web text-sm sm:text-base md:text-base lg:text-lg"
               />
             </div>
 
             <div>
-              <label class="block text-sm font-medium mb-2">Tarih</label>
+              <label class="block text-xs sm:text-sm md:text-sm lg:text-base font-medium mb-2">Tarih</label>
               <input
                 v-model="project.date"
                 type="text"
                 placeholder="Örn: Ağu 2025 - Eyl 2025"
-                class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-orange-web"
+                class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-orange-web text-sm sm:text-base md:text-base lg:text-lg"
               />
             </div>
           </div>
 
           <div>
-            <label class="block text-sm font-medium mb-2">Açıklama</label>
+            <label class="block text-xs sm:text-sm md:text-sm lg:text-base font-medium mb-2">Açıklama</label>
             <textarea
               v-model="project.description"
               rows="3"
               placeholder="Proje açıklaması..."
-              class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-orange-web"
+              class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-orange-web text-sm sm:text-base md:text-base lg:text-lg"
             ></textarea>
           </div>
 
           <div>
-            <label class="block text-sm font-medium mb-2">Kullanılan Teknolojiler</label>
+            <label class="block text-xs sm:text-sm md:text-sm lg:text-base font-medium mb-2">Kullanılan Teknolojiler</label>
             <input
               v-model="project.technologies"
               type="text"
               placeholder="Örn: Next.js, React, TypeScript, Tailwind CSS"
-              class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-orange-web"
+              class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-orange-web text-sm sm:text-base md:text-base lg:text-lg"
             />
           </div>
 
           <div>
-            <label class="block text-sm font-medium mb-2">Proje URL (Opsiyonel)</label>
+            <label class="block text-xs sm:text-sm md:text-sm lg:text-base font-medium mb-2">Proje URL (Opsiyonel)</label>
             <input
               v-model="project.url"
               type="text"
               placeholder="Örn: https://foreverelite.co.uk"
-              class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-orange-web"
+              class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-orange-web text-sm sm:text-base md:text-base lg:text-lg"
             />
           </div>
         </div>
@@ -80,13 +80,13 @@
     <div class="flex flex-col md:flex-row justify-center gap-4">
       <button
         @click="addProject"
-        class="px-6 py-3 bg-green-500 hover:bg-green-600"
+        class="px-3 py-2 sm:px-4 sm:py-3 md:px-5 md:py-3 lg:px-6 lg:py-3 bg-green-500 hover:bg-green-600 text-sm sm:text-base md:text-base lg:text-lg"
       >
         + Yeni Proje Ekle
       </button>
       <button
         @click="saveChanges"
-        class="px-6 py-3 hover:text-white"
+        class="px-3 py-2 sm:px-4 sm:py-3 md:px-5 md:py-3 lg:px-6 lg:py-3 hover:text-white text-sm sm:text-base md:text-base lg:text-lg"
       >
         Değişiklikleri Kaydet
       </button>

@@ -1,15 +1,15 @@
 <template>
   <section id="beceriler" class="min-h-screen flex flex-col justify-center gap-6 p-4">
     <BasePopup v-model="showPopup" :message="popupMessage" :duration="3000" />
-    <h1 class="text-3xl md:text-5xl font-bold">Beceriler Bölümünü Düzenle</h1>
+    <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold">Beceriler Bölümünü Düzenle</h1>
 
     <!-- Programlama Dilleri -->
     <div class="border p-6 rounded-lg bg-white shadow-lg">
       <div class="flex justify-between items-center mb-4">
-        <h2 class="text-2xl font-semibold">Programlama Dilleri</h2>
+        <h2 class="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold">Programlama Dilleri</h2>
         <button
           @click="addSkill('programmingLanguages')"
-          class="px-4 py-2 bg-green-500 text-white rounded-lg "
+          class="px-3 py-2 sm:px-4 sm:py-2 md:px-4 md:py-2 lg:px-4 lg:py-2 bg-green-500 text-white rounded-lg text-xs sm:text-sm md:text-sm lg:text-base"
         >
           + Ekle
         </button>
@@ -24,17 +24,17 @@
             v-model="skill.name"
             type="text"
             placeholder="İsim (örn: JavaScript)"
-            class="col-span-5 p-2 border rounded-lg focus:ring-2 focus:ring-orange-web"
+            class="col-span-5 p-2 border rounded-lg focus:ring-2 focus:ring-orange-web text-sm sm:text-base md:text-base lg:text-lg"
           />
           <input
             v-model="skill.icon"
             type="text"
             placeholder="İkon (örn: skill-icons:javascript)"
-            class="col-span-6 p-2 border rounded-lg focus:ring-2 focus:ring-orange-web"
+            class="col-span-6 p-2 border rounded-lg focus:ring-2 focus:ring-orange-web text-sm sm:text-base md:text-base lg:text-lg"
           />
           <button
             @click="removeSkill('programmingLanguages', index)"
-            class="col-span-1 px-3 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600"
+            class="col-span-1 px-3 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 text-xs sm:text-sm"
           >
             ✕
           </button>
@@ -45,10 +45,10 @@
     <!-- Web Geliştirme -->
     <div class="border p-6 rounded-lg bg-white shadow-lg">
       <div class="flex justify-between items-center mb-4">
-        <h2 class="text-2xl font-semibold">Web Geliştirme</h2>
+        <h2 class="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold">Web Geliştirme</h2>
         <button
           @click="addSkill('webDevelopment')"
-          class="px-4 py-2 bg-green-500 text-white rounded-lg "
+          class="px-3 py-2 sm:px-4 sm:py-2 md:px-4 md:py-2 lg:px-4 lg:py-2 bg-green-500 text-white rounded-lg text-xs sm:text-sm md:text-sm lg:text-base"
         >
           + Ekle
         </button>
@@ -63,17 +63,17 @@
             v-model="skill.name"
             type="text"
             placeholder="İsim (örn: React)"
-            class="col-span-5 p-2 border rounded-lg focus:ring-2 focus:ring-orange-web"
+            class="col-span-5 p-2 border rounded-lg focus:ring-2 focus:ring-orange-web text-sm sm:text-base md:text-base lg:text-lg"
           />
           <input
             v-model="skill.icon"
             type="text"
             placeholder="İkon (örn: skill-icons:react-dark)"
-            class="col-span-6 p-2 border rounded-lg focus:ring-2 focus:ring-orange-web"
+            class="col-span-6 p-2 border rounded-lg focus:ring-2 focus:ring-orange-web text-sm sm:text-base md:text-base lg:text-lg"
           />
           <button
             @click="removeSkill('webDevelopment', index)"
-            class="col-span-1 px-3 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600"
+            class="col-span-1 px-3 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 text-xs sm:text-sm"
           >
             ✕
           </button>
@@ -84,10 +84,10 @@
     <!-- Backend & Veritabanı -->
     <div class="border p-6 rounded-lg bg-white shadow-lg">
       <div class="flex justify-between items-center mb-4">
-        <h2 class="text-2xl font-semibold ">Backend & Veritabanı</h2>
+        <h2 class="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold ">Backend & Veritabanı</h2>
         <button
           @click="addSkill('backendAndDatabase')"
-          class="px-4 py-2 bg-green-500 text-white rounded-lg "
+          class="px-3 py-2 sm:px-4 sm:py-2 md:px-4 md:py-2 lg:px-4 lg:py-2 bg-green-500 text-white rounded-lg text-xs sm:text-sm md:text-sm lg:text-base"
         >
           + Ekle
         </button>
@@ -102,17 +102,17 @@
             v-model="skill.name"
             type="text"
             placeholder="İsim (örn: Firebase)"
-            class="col-span-5 p-2 border rounded-lg focus:ring-2 focus:ring-orange-web"
+            class="col-span-5 p-2 border rounded-lg focus:ring-2 focus:ring-orange-web text-sm sm:text-base md:text-base lg:text-lg"
           />
           <input
             v-model="skill.icon"
             type="text"
             placeholder="İkon (örn: skill-icons:firebase)"
-            class="col-span-6 p-2 border rounded-lg focus:ring-2 focus:ring-orange-web"
+            class="col-span-6 p-2 border rounded-lg focus:ring-2 focus:ring-orange-web text-sm sm:text-base md:text-base lg:text-lg"
           />
           <button
             @click="removeSkill('backendAndDatabase', index)"
-            class="col-span-1 px-3 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600"
+            class="col-span-1 px-3 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 text-xs sm:text-sm"
           >
             ✕
           </button>
@@ -123,10 +123,10 @@
     <!-- DevOps & Tools -->
     <div class="border p-6 rounded-lg bg-white shadow-lg">
       <div class="flex justify-between items-center mb-4">
-        <h2 class="text-2xl font-semibold">DevOps & Tools</h2>
+        <h2 class="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold">DevOps & Tools</h2>
         <button
           @click="addSkill('devopsAndTools')"
-          class="px-4 py-2 bg-green-500 text-white rounded-lg "
+          class="px-3 py-2 sm:px-4 sm:py-2 md:px-4 md:py-2 lg:px-4 lg:py-2 bg-green-500 text-white rounded-lg text-xs sm:text-sm md:text-sm lg:text-base"
         >
           + Ekle
         </button>
@@ -141,17 +141,17 @@
             v-model="skill.name"
             type="text"
             placeholder="İsim (örn: Docker)"
-            class="col-span-5 p-2 border rounded-lg focus:ring-2 focus:ring-orange-web"
+            class="col-span-5 p-2 border rounded-lg focus:ring-2 focus:ring-orange-web text-sm sm:text-base md:text-base lg:text-lg"
           />
           <input
             v-model="skill.icon"
             type="text"
             placeholder="İkon (örn: skill-icons:docker)"
-            class="col-span-6 p-2 border rounded-lg focus:ring-2 focus:ring-orange-web"
+            class="col-span-6 p-2 border rounded-lg focus:ring-2 focus:ring-orange-web text-sm sm:text-base md:text-base lg:text-lg"
           />
           <button
             @click="removeSkill('devopsAndTools', index)"
-            class="col-span-1 px-3 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600"
+            class="col-span-1 px-3 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 text-xs sm:text-sm"
           >
             ✕
           </button>
@@ -163,7 +163,7 @@
     <div class="flex justify-center gap-4">
       <button
         @click="saveChanges"
-        class="px-6 py-3 bg-orange-web text-white rounded-lg hover:bg-orange-600 font-semibold"
+        class="px-3 py-2 sm:px-4 sm:py-3 md:px-5 md:py-3 lg:px-6 lg:py-3 bg-orange-web text-white rounded-lg hover:bg-orange-600 font-semibold text-sm sm:text-base md:text-base lg:text-lg"
       >
         Değişiklikleri Kaydet
       </button>
