@@ -11,7 +11,7 @@
       <h1
         ref="mainTitle"
         :class="[
-          'text-3xl md:text-5xl font-bold transition-all duration-1000 ease-out',
+          'text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold transition-all duration-1000 ease-out',
           mainTitleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10',
         ]"
       >
@@ -26,13 +26,13 @@
       ]"
     >
       <div class="flex justify-between items-center w-full">
-        <h1 class="text-lg md:text-xl font-semibold text-gray-800">
+        <h1 class="text-base sm:text-lg md:text-lg lg:text-xl font-semibold text-gray-800">
           {{ experienceInfo?.firstCompany }}
         </h1>
-        <span class="text-xs md:text-sm">{{ experienceInfo?.firstCompanyDate }}</span>
+        <span class="text-xs sm:text-xs md:text-xs lg:text-sm">{{ experienceInfo?.firstCompanyDate }}</span>
       </div>
-      <h2 class="text-lg md:text-xl font-semibold text-gray-500">{{ experienceInfo?.firstCompanyType }}</h2>
-      <p class="text-base md:text-lg text-gray-600">
+      <h2 class="text-base sm:text-lg md:text-lg lg:text-xl font-semibold text-gray-500">{{ experienceInfo?.firstCompanyType }}</h2>
+      <p class="text-sm sm:text-base md:text-base lg:text-lg text-gray-600">
         {{ experienceInfo?.firstCompanyDescription }}
       </p>
     </div>
@@ -45,11 +45,11 @@
       ]"
     >
       <div class="flex justify-between items-center">
-        <h1 class="text-lg md:text-xl font-semibold text-gray-800">{{ experienceInfo?.secondCompany }}</h1>
-        <span class="text-xs md:text-sm">{{ experienceInfo?.secondCompanyDate }}</span>
+        <h1 class="text-base sm:text-lg md:text-lg lg:text-xl font-semibold text-gray-800">{{ experienceInfo?.secondCompany }}</h1>
+        <span class="text-xs sm:text-xs md:text-xs lg:text-sm">{{ experienceInfo?.secondCompanyDate }}</span>
       </div>
-      <h2 class="text-lg md:text-xl font-semibold text-gray-500">{{ experienceInfo?.secondCompanyType }}</h2>
-      <p class="text-base md:text-lg text-gray-600">
+      <h2 class="text-base sm:text-lg md:text-lg lg:text-xl font-semibold text-gray-500">{{ experienceInfo?.secondCompanyType }}</h2>
+      <p class="text-sm sm:text-base md:text-base lg:text-lg text-gray-600">
         {{ experienceInfo?.secondCompanyDescription }}
       </p>
     </div>

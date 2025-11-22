@@ -19,7 +19,7 @@
         <EducationView />
       </section>
 
-      <section id="beceriler" class="sticky top-16 md:top-6 z-5 bg-gray-50 h-screen flex flex-col section-transition">
+      <section id="beceriler" class="sticky top-16 md:top-6 z-5 bg-gray-50 min-h-screen flex flex-col section-transition">
         <SkillsView />
       </section>
 

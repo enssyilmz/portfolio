@@ -7,7 +7,7 @@
       <h2
         ref="mainTitle"
         :class="[
-          'text-3xl md:text-5xl font-bold mb-8 transition-all duration-700 ease-out',
+          'text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold mb-8 transition-all duration-700 ease-out',
           mainTitleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8',
         ]"
       >
@@ -23,11 +23,11 @@
               nameVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4',
             ]"
           >
-            <label class="font-medium">Ad</label>
+            <label class="font-medium text-sm sm:text-base md:text-base lg:text-lg">Ad</label>
             <input
               v-model="form.FirstName"
               type="text"
-              class="w-full p-2 rounded-lg border-b focus:outline-none focus:ring-2"
+              class="w-full p-2 rounded-lg border-b focus:outline-none focus:ring-2 text-sm sm:text-base md:text-base lg:text-lg"
               required
             />
           </div>
@@ -39,11 +39,11 @@
               surnameVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4',
             ]"
           >
-            <label class="font-medium">Soyad</label>
+            <label class="font-medium text-sm sm:text-base md:text-base lg:text-lg">Soyad</label>
             <input
               v-model="form.LastName"
               type="text"
-              class="w-full p-2 rounded-lg border-b focus:outline-none focus:ring-2"
+              class="w-full p-2 rounded-lg border-b focus:outline-none focus:ring-2 text-sm sm:text-base md:text-base lg:text-lg"
               required
             />
           </div>
@@ -56,11 +56,11 @@
             emailVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4',
           ]"
         >
-          <label class="font-medium mb-2">E-posta</label>
+          <label class="font-medium mb-2 text-sm sm:text-base md:text-base lg:text-lg">E-posta</label>
           <input
             v-model="form.Email"
             type="email"
-            class="w-full p-2 rounded-lg border-b focus:outline-none focus:ring-2"
+            class="w-full p-2 rounded-lg border-b focus:outline-none focus:ring-2 text-sm sm:text-base md:text-base lg:text-lg"
             required
           />
         </div>
@@ -72,11 +72,11 @@
             subjectVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4',
           ]"
         >
-          <label class="font-medium mb-2">Konu</label>
+          <label class="font-medium mb-2 text-sm sm:text-base md:text-base lg:text-lg">Konu</label>
           <input
             v-model="form.Subject"
             type="text"
-            class="w-full p-2 rounded-lg border-b focus:outline-none focus:ring-2"
+            class="w-full p-2 rounded-lg border-b focus:outline-none focus:ring-2 text-sm sm:text-base md:text-base lg:text-lg"
             required
           />
         </div>
@@ -88,11 +88,11 @@
             messageVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4',
           ]"
         >
-          <label class="font-medium mb-2">Mesaj</label>
+          <label class="font-medium mb-2 text-sm sm:text-base md:text-base lg:text-lg">Mesaj</label>
           <textarea
             v-model="form.Message"
             rows="6"
-            class="w-full p-2 rounded-lg border-b focus:outline-none focus:ring-2 "
+            class="w-full p-2 rounded-lg border-b focus:outline-none focus:ring-2 text-sm sm:text-base md:text-base lg:text-lg"
             required
           ></textarea>
         </div>
@@ -105,7 +105,7 @@
             buttonfieldVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4',
           ]"
         >
-          <button @click="saveChanges" class="btn px-4 py-2 rounded-lg" type="submit">
+          <button @click="saveChanges" class="btn px-4 py-2 rounded-lg text-sm sm:text-base md:text-base lg:text-lg" type="submit">
             Gönder
           </button>
         </div>

@@ -11,7 +11,7 @@
       <h1
         ref="mainTitle"
         :class="[
-          'text-3xl md:text-5xl font-bold mb-6 transition-all duration-1000 ease-out',
+          'text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold mb-6 transition-all duration-1000 ease-out',
           mainTitleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10',
         ]"
       >
@@ -26,7 +26,7 @@
             firstFieldVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10',
           ]"
         >
-          <h2 class="text-xl md:text-2xl mb-4 font-semibold text-gray-800 ">
+          <h2 class="text-base sm:text-lg md:text-xl lg:text-2xl mb-4 font-semibold text-gray-800 ">
             Programlama Dilleri
           </h2>
           <div class="flex flex-row flex-wrap gap-4">
@@ -39,7 +39,7 @@
               ]"
               :style="{ transitionDelay: `${index * 80 + 200}ms` }"
             >
-              <Icon :icon="skill.icon" class="w-14 h-14" />
+              <Icon :icon="skill.icon" class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16" />
             </div>
           </div>
         </div>
@@ -51,7 +51,7 @@
             secondFieldVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10',
           ]"
         >
-          <h2 class="text-xl md:text-2xl font-semibold mb-4 text-gray-800">
+          <h2 class="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold mb-4 text-gray-800">
             Web Geliştirme
           </h2>
           <div class="flex flex-row flex-wrap gap-4">
@@ -64,7 +64,7 @@
               ]"
               :style="{ transitionDelay: `${index * 80 + 200}ms` }"
             >
-              <Icon :icon="skill.icon" class="w-14 h-14" />
+              <Icon :icon="skill.icon" class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16" />
             </div>
           </div>
         </div>
@@ -76,7 +76,7 @@
             thirdFieldVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10',
           ]"
         >
-          <h2 class="text-xl md:text-2xl font-semibold mb-4 text-gray-800">
+          <h2 class="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold mb-4 text-gray-800">
             Backend & Veritabanı
           </h2>
           <div class="flex flex-row flex-wrap gap-4">
@@ -89,7 +89,7 @@
               ]"
               :style="{ transitionDelay: `${index * 80 + 200}ms` }"
             >
-              <Icon :icon="skill.icon" class="w-14 h-14" />
+              <Icon :icon="skill.icon" class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16" />
             </div>
           </div>
         </div>
@@ -101,7 +101,7 @@
             fourthFieldVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10',
           ]"
         >
-          <h2 class="text-xl md:text-2xl font-semibold mb-4 text-gray-800">
+          <h2 class="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold mb-4 text-gray-800">
             DevOps & Tools
           </h2>
           <div class="flex flex-row flex-wrap gap-4">
@@ -114,7 +114,7 @@
               ]"
               :style="{ transitionDelay: `${index * 80 + 200}ms` }"
             >
-              <Icon :icon="skill.icon" class="w-14 h-14" />
+              <Icon :icon="skill.icon" class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16" />
             </div>
           </div>
         </div>

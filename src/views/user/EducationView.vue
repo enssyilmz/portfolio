@@ -11,7 +11,7 @@
       <h1
         ref="mainTitle"
         :class="[
-          'text-3xl md:text-5xl font-bold transition-all duration-1000 ease-out',
+          'text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold transition-all duration-1000 ease-out',
           mainTitleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10',
         ]"
       >
@@ -26,13 +26,13 @@
       ]"
     >
       <div class="flex items-center justify-between w-full">
-        <h1 class="text-lg md:text-xl font-semibold text-gray-800">{{ educationInfo?.firstUniversity }}</h1>
-        <span class="text-xs md:text-sm">{{ educationInfo?.firstUniversityDate }}</span>
+        <h1 class="text-base sm:text-lg md:text-lg lg:text-xl font-semibold text-gray-800">{{ educationInfo?.firstUniversity }}</h1>
+        <span class="text-xs sm:text-xs md:text-xs lg:text-sm">{{ educationInfo?.firstUniversityDate }}</span>
       </div>
-      <h2 class="text-lg md:text-xl font-semibold text-paynes-gray mt-1">
+      <h2 class="text-base sm:text-lg md:text-lg lg:text-xl font-semibold text-paynes-gray mt-1">
         {{ educationInfo?.firstUniversityDepartment }}
       </h2>
-      <p class="text-base md:text-xl text-charcoal">{{ educationInfo?.firstUniversityDegree }}</p>
+      <p class="text-sm sm:text-base md:text-base lg:text-xl text-charcoal">{{ educationInfo?.firstUniversityDegree }}</p>
     </div>
     <br />
     <div
@@ -43,13 +43,13 @@
       ]"
     >
       <div class="flex justify-between items-center">
-        <h1 class="text-lg md:text-xl font-semibold text-gray-800 flex-1 mr-4">{{ educationInfo?.secondUniversity }}</h1>
-        <span class="text-xs md:text-sm flex-shrink-0">{{ educationInfo?.secondUniversityDate }}</span>
+        <h1 class="text-base sm:text-lg md:text-lg lg:text-xl font-semibold text-gray-800 flex-1 mr-4">{{ educationInfo?.secondUniversity }}</h1>
+        <span class="text-xs sm:text-xs md:text-xs lg:text-sm flex-shrink-0">{{ educationInfo?.secondUniversityDate }}</span>
       </div>
-      <h2 class="text-lg md:text-xl font-semibold text-gray-500 mt-1">
+      <h2 class="text-base sm:text-lg md:text-lg lg:text-xl font-semibold text-gray-500 mt-1">
         {{ educationInfo?.secondUniversityDepartment }}
       </h2>
-      <p class="text-base md:text-xl text-gray-600">{{ educationInfo?.secondUniversityDegree }}</p>
+      <p class="text-sm sm:text-base md:text-base lg:text-xl text-gray-600">{{ educationInfo?.secondUniversityDegree }}</p>
     </div>
     </div>
   </section>
