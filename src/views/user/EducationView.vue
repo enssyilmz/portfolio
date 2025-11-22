@@ -1,6 +1,5 @@
 <template>
   <section
-    id="egitim"
     class="min-h-screen flex flex-col justify-center items-start gap-4 overflow-x-hidden"
   >
     <div v-if="!educationInfo" class="flex flex-col items-center justify-center">
@@ -22,7 +21,7 @@
     <div
       ref="firstEducation"
       :class="[
-        'w-full transition-all duration-1000 ease-out delay-200',
+        'w-full transition-all duration-1000 ease-out delay-200 border p-4 rounded-lg bg-white shadow',
         firstEduVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10',
       ]"
     >
@@ -39,7 +38,7 @@
     <div
       ref="secondEducation"
       :class="[
-        'w-full transition-all duration-1000 ease-out delay-400',
+        'w-full transition-all duration-1000 ease-out delay-400 border p-4 rounded-lg bg-white shadow',
         secondEduVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10',
       ]"
     >

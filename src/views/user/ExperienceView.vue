@@ -1,6 +1,5 @@
 <template>
   <section
-    id="deneyimler"
     class="min-h-screen flex flex-col justify-center items-start gap-4 overflow-x-hidden"
   >
     <div v-if="!experienceInfo" class="flex flex-col items-center justify-center">

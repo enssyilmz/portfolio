@@ -1,6 +1,5 @@
 <template>
   <section
-    id="beceriler"
     class="min-h-screen flex flex-col justify-center items-start gap-4 overflow-x-hidden"
   >
     <div v-if="!skillsList" class="flex flex-col items-center justify-center">
