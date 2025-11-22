@@ -67,33 +67,44 @@ function scrollToSection(id) {
   const el = document.getElementById(id)
   if (!el) return
 
-  setTimeout(() => {
-    el.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-      inline: 'nearest',
-    })
-  }, 100)
+  // Get all sections
+  const allSections = Array.from(document.querySelectorAll('section[id]'))
+  const targetIndex = allSections.findIndex(section => section.id === id)
+
+  if (targetIndex === -1) return
+
+  // Calculate scroll position based on section index
+  // Each section is h-screen (100vh)
+  const sectionHeight = window.innerHeight
+  const scrollPosition = (targetIndex * sectionHeight)
+
+  // Scroll to calculated position
+  window.scrollTo({
+    top: scrollPosition,
+    behavior: 'smooth'
+  })
 }
 onMounted(() => {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          activeSection.value = entry.target.id
-        }
-      })
-    },
-    {
-      threshold: 0.5,
-    },
-  )
+  // Update active section based on scroll position
+  const updateActiveSection = () => {
+    const scrollPosition = window.scrollY
+    const sectionHeight = window.innerHeight
+    const currentIndex = Math.round(scrollPosition / sectionHeight)
 
-  const targets = document.querySelectorAll('section[id]')
-  targets.forEach((el) => observer.observe(el))
+    const allSections = Array.from(document.querySelectorAll('section[id]'))
+    if (allSections[currentIndex]) {
+      activeSection.value = allSections[currentIndex].id
+    }
+  }
+
+  // Update on scroll
+  window.addEventListener('scroll', updateActiveSection)
+
+  // Initial update
+  updateActiveSection()
 
   onUnmounted(() => {
-    targets.forEach((el) => observer.unobserve(el))
+    window.removeEventListener('scroll', updateActiveSection)
   })
 })
 </script>
